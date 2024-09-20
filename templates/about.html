@@ -1,0 +1,227 @@
+{% extends 'base_templates/base.html' %}
+
+{% block SEO %}
+    <meta charset="utf-8">
+    <title>Biz499 | About Us</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="biz499 is a marketing agency that provides affordable, professional marketing services to small businesses. We offer a wide range of services including social media marketing, search engine optimization, and pay-per-click management. We are committed to helping our clients grow their businesses and reach their goals. Contact us today to learn more about how we can help you grow your business.">
+    <meta name="keywords" content="marketing, sales, app develpment, web development, digital marketingbootstrap, business, creative agency, portfolio,biz499, digital marketing agency in surat">
+    <meta name="author" content="Biz499">
+{% endblock SEO %}
+
+{% block vendor_style %}
+{% load static %}
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/simplebar/dist/simplebar.min.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/lightgallery.js/dist/css/lightgallery.min.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/tiny-slider/dist/tiny-slider.css' %}"/>
+{% endblock vendor_style %}
+{% block content %}
+    
+{% for message in messages  %}            
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  <span class="fw-bold">{{ message.tags|capfirst}} Alert:</span> {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %} 
+
+
+      <!-- Story -->
+      <section class="container mt-5 mb-2 mb-md-5 mb-lg-6 pt-md-4">
+        <div class="row position-relative">
+          <div class="col-md-7 col-sm-8">
+            <h3 class="h6 mb-2 text-uppercase">About us</h3>
+            <h1 class="mb-4 mb-sm-6 px-0 col-sm-7">We are born to Design Experience.</h1>
+            <div class="gallery d-sm-none d-block mb-n2">
+              <a class="gallery-item video-item" href="https://vimeo.com/429640367" data-sub-html="<h6 class='text-light'>Gallery video caption</h6>">
+                <img src="{% static 'img/creative-agency/team/about.jpg' %}" alt="About">
+              </a>
+            </div>
+            <div class="py-5 px-sm-4 px-3 bg-secondary">
+              <div class="col-xl-7 col-lg-8 p-sm-3 px-0">
+                <h3 class="h6 mb-2 text-uppercase">est 2014</h3>
+                <h2 class="h1 mb-sm-5 mb-4">Our story</h2>
+                <p class="text-muted">Founded in 2014, Biz499 is a crafty team of strategists, designers, developers, and marketers.</p>
+                <p class="text-muted">We work with people across a wide range of sectors including established brands, non-profits, universities, startups, and entrepreneurs.</p>
+                <div class="collapse" id="story-collapse">
+                  <p class="text-muted">Some of our past clientele includes Yourstory, Ungrezi, ExamByte, EduIITians, Befits Marketing Solutions and many more. </p>
+                  <p class="text-muted">We aim to disrupt knowledge and skill based Jobs Industry by offering long term solutions to both businesses and professionals who have or desire to hone in their Design, Development, Marketing and Sales skills. </p>
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-between px-sm-3">
+                <div>
+                  <a class="collapse-toggler fs-sm fw-bold text-body text-decoration-none text-nowrap" href="#story-collapse" data-collapsed="Read more" data-expanded="Read less" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="story-collapse">
+                    <i class="collapse-toggler-indicator ci-arrow-down"></i>
+                  </a>
+                </div>
+                <div class="d-sm-block d-none me-xl-n2">
+                  <a href="https://www.youtube.com/watch?v=nN-dxgjq-uo&ab_channel=biz499" class="btn-video me-sm-3 me-2" data-gallery-video data-sub-html="<h6 class='fs-sm text-light'>Agency Showreel</h6>" data-gallery-video></a>
+                  <span class="fs-sm fw-bold text-dark text-nowrap align-middle">Watch Video</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-7 d-sm-block d-none position-absolute" style="top: 0; right: 0;">
+            <img class="mt-4 rounded" src="{% static 'img/creative-agency/team/aboutus_hero.webp' %}" alt="About">
+          </div>
+        </div>
+
+        <div class="row mt-3 mt-sm-4 mt-md-0 pt-md-6 py-5" id="tabs">
+          <div class="col-lg-10 ms-auto">
+            <div class="row">
+              <div class="col-sm-4">
+
+                <!-- Vertical tab navs -->
+                <div class="mb-sm-0 mb-4 pb-sm-0 pb-2" data-simplebar data-simplebar-auto-hide="false">
+                  <ul class="nav flex-sm-column flex-nowrap" id="storyTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link h1 mb-0 fw-black line-height-1 active" href="#vision" id="vision-tab" data-bs-toggle="tab" role="tab" aria-controls="vision" aria-selected="true">
+                        Vision
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link h1 mb-0 fw-black line-height-1" href="#mission" id="mission-tab" data-bs-toggle="tab" role="tab" aria-controls="mission" aria-selected="false">
+                        Mission
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link h1 mb-0 fw-black line-height-1" href="#values" id="values-tab" data-bs-toggle="tab" role="tab" aria-controls="values" aria-selected="false">
+                        Values
+                      </a>
+                    </li>
+                  </ul>  
+                </div>
+              </div>
+              <div class="col-sm-8">
+
+                <!-- Tabs content -->
+                <div class="tab-content mt-3">
+                  <div class="tab-pane fade show active" id="vision" role="tabpanel" aria-labelledby="vision-tab">
+                    <p class="lead">A marketing agency which aims to disrupt the quality pricing and quality of applying knowledge based skills for making viable businesses and a fruitful career for its employees.</p>
+                    <p class="lead">We will provide an environment for our employees which is conducive to learning, creativity and innovation. We will also offer a competitive salary and benefits package. Our goal is to be the premier provider of knowledge based marketing services in the world.</p>
+                  </div>
+                  <div class="tab-pane fade" id="mission" role="tabpanel" aria-labelledby="mission-tab">
+                    <p class="lead">Our mission is to produce better and long term business relationships with knowledge workers and a business's clientele. We aim to provide our clients with the necessary tools and strategies to succeed in today's highly competitive marketplace!</p>
+                    <p class="lead">In addition, we strive to create an environment that is conducive to cooperation and collaboration between businesses and knowledge workers.</p>
+                  </div>
+                  <div class="tab-pane fade" id="values" role="tabpanel" aria-labelledby="values-tab">
+                    <p class="lead">We uphold the following values: creativity, discipline, innovation, and teamwork. These values should be evident in every aspect of the our agency’s work, from the way we conceives and executes campaigns to the way we manage our internal operations!</p>
+                    <p class="lead">By adhering to these values, we set ourselves apart from the competition and build a strong reputation with clients and employees alike.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Brands -->
+      <section class="container mb-4 mb-md-5 mb-lg-6 pb-5">
+        <h3 class="h6 mb-2 text-uppercase">Clients</h3>
+        <h2 class="h1 mb-5 pb-2">Brands we've worked with</h2>
+        <div class="tns-carousel-wrapper">
+          <div class="tns-carousel-inner" data-carousel-options='{
+            "nav": false,
+            "controls": false,
+            "autoplay": true,
+            "autoplayTimeout": 4000,
+            "responsive": {
+              "0": {
+                "items": 2
+              },
+              "576": {
+                "items": 3
+              },
+              "768": {
+                "items": 4
+              },
+              "992": {
+                "items": 5
+              },
+              "1200": {
+                "items": 6
+              }
+            }
+          }'>
+            {% for company in home_logos %}
+            <div>
+              <div class="d-flex flex-column">
+                {% if not forloop.counter|divisibleby:"2" %}
+                <a href="#" class="swap-image mb-4">
+                  <img src="{{company.logo.url}}" class="swap-to" width="120" alt="{{company.title}} logo hover">
+                  <img src="{{company.logo_grey.url}}" class="swap-from" width="120" alt="{{company.title}} logo">
+                </a>
+                {% endif %}
+                {% if forloop.counter|divisibleby:"2" %}                
+                <a href="#" class="swap-image">
+                  <img src="{{company.logo.url}}" class="swap-to" width="120" alt="{{company.title}} logo hover">
+                  <img src="{{company.logo_grey.url}}" class="swap-from" width="120" alt="{{company.title}} logo">
+                </a>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Team -->
+      <section class="container mb-sm-4">
+        <h3 class="h6 mb-2 text-uppercase">We are</h3>
+        <h2 class="h1 mb-5 pb-sm-2 col-lg-6 col-md-8 col-sm-10 px-0">Enthusiastic individuals working for extraordinary brands.</h2>
+        <div class="row">
+
+          {% for person in team_members %}
+          <!-- Item -->
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mb-lg-5">
+            <div class="card team mx-auto" style="max-width: 22rem;">
+              <div class="card-img">
+                <img src="{{person.pic.url}}" alt="{{person.name}}"/>
+                <div class="card-floating-links text-end">
+                  <a class="btn-social bs-solid rounded-circle bs-light me-2" href="#">
+                    <i class="ci-facebook"></i>
+                  </a>
+                  <a class="btn-social bs-solid rounded-circle bs-light me-2" href="#">
+                    <i class="ci-instagram"></i>
+                  </a>
+                  <a class="btn-social bs-solid rounded-circle bs-light" href="#">
+                    <i class="ci-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body py-3 text-center">
+                <h5 class="card-title mb-1">{{person.name}}</h5>
+                <p class="card-text text-muted">{{person.position}}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+
+      <!-- Contact links -->
+{% include "base_templates/contact_list.html" %}
+
+
+
+
+{% endblock content %}
+
+{% block footernscripts  %}
+{% include "base_templates/footer.html" %}
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js' %}"></script>
+    <script src="{% static 'vendor/lightgallery.js/dist/js/lightgallery.min.js' %}"></script>
+    <script src="{% static 'vendor/lg-video.js/dist/lg-video.min.js' %}"></script>
+    <script src="{% static 'vendor/simplebar/dist/simplebar.min.js' %}"></script>
+    <script src="{% static 'vendor/tiny-slider/dist/min/tiny-slider.js' %}"></script>
+
+    <!-- Main theme script-->
+    <script src="{% static 'main/js/theme.min.js' %}"></script>
+
+{% endblock footernscripts  %}

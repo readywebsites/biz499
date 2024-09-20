@@ -1,0 +1,161 @@
+<!-- {% url 'blog' as blog %} -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block SEO %}
+  {% endblock SEO %}
+
+  {% include "base_templates/head.html" %}
+
+  {% block vendor_style %}
+  {% endblock vendor_style %}
+
+  <!-- Main Theme Styles + Bootstrap-->
+
+
+<link rel="stylesheet" media="screen" href="{% static 'main/creative-agency/demo/theme.min.css' %}"> 
+
+
+
+  {% include "base_templates/loading_files.html" %}
+
+    <!-- Google tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWE96NSKZG">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZWE96NSKZG');
+  </script>
+
+  <!-- end of google scripts -->
+
+
+  <!-- Meta Pixel Code -->
+
+    <!-- End Meta Pixel Code -->
+
+<!-- Hotjar Tracking Code for https://biz499.com/ -->
+<script>
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:3656829,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+
+<body {% if request.path == blog or request.path == post %}class="is-sidebar" {% endif %} >
+    <!-- Body-->
+      <!-- Page loading spinner-->
+      <div class="page-loading active">
+        <div class="page-loading-inner">
+          <div class="page-spinner"></div><span>Loading...</span>
+        </div>
+      </div>
+
+    <style>
+      .float{
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#99d455;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        font-size:30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index:100;
+      }
+      
+      .my-float{
+        margin-top:16px;
+      }
+</style>  
+      <a href="https://api.whatsapp.com/send?phone=917990636954&text=Hi%20there!%20%F0%9F%91%8B%20I%20visited%20your%20website%2C%20Biz499%2C%20and%20I%27m%20interested%20in%20your%20marketing%20and%20web%2Fapp%20development%20services.%20I%27d%20love%20to%20discuss%20how%20you%20can%20help%20my%20business%20succeed%20online.%20Can%20we%20chat%20more%20about%20this%3F%20%F0%9F%9A%80" class="float" target="_blank">
+        <i class="ci-whatsapp my-float"></i>
+        </a>
+      <!-- Main content-->
+      <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+      <main class="page-wrapper position-relative">
+  
+        
+        <!-- Navbar -->
+        <!-- Remove .navbar-sticky class to detach .navbar from page scroll -->
+        <header 
+        {% if request.path == '/' %} class="header navbar navbar-expand-md navbar-dark navbar-sticky navbar-floating" 
+        {% elif request.path == '/portfolio/' %} class="header navbar navbar-expand-md navbar-light navbar-sticky navbar-floating"
+        {% else %}
+        class="header navbar navbar-expand-md navbar-light navbar-sticky"
+        {% endif %}>
+          <div class="container px-0 px-xl-0">
+            <a class="navbar-brand order-md-1 me-md-5 me-0 pe-lg-2" href="/">
+              <img class="navbar-brand-static" src="{% static 'img/creative-agency/Gradient_logo_biz499.svg' %}" alt="biz499" width="150">
+              <img class="navbar-brand-floating" src="{% static 'img/creative-agency/Gradient_logo_biz499.svg' %}" alt="Createx Logo" width="130">
+            </a>
+            <div class="d-flex align-items-center order-md-3">
+              <a class="btn btn-primary rounded-pill d-sm-inline-block d-none ms-3" href="/contacts">Contact us</a>
+              <button class="navbar-toggler ms-1 me-n3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse1" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+            <nav class="collapse navbar-collapse order-md-2" id="navbarCollapse1">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a 
+                  {% if request.path == '/' %} class="nav-link active" 
+                  {% else %}
+                  class="nav-link" {% endif %} href="/">Home</a>
+                </li>
+                <li class="nav-item ">                  
+                  {% if request.path == '/portfolio/' %} <a class="nav-link active" href="/portfolio" data-bs-toggle="dropdown">Portfolio</a>
+                  {% else %}
+                  <a class="nav-link " href="/portfolio/" >Portfolio</a>{% endif %}
+                </li>
+                <li class="nav-item">
+                  {% if request.path == '/about/' %}
+                  <a class="nav-link active" href="about.html">About us</a>
+                  {% else %}
+                  <a class="nav-link" href="/about/">About us</a>
+                  {% endif %}
+                </li>
+                <li class="nav-item">
+                  <a 
+                  {% if request.path == '/blog/'  %} class="nav-link active"
+                  {% else %}
+                  class="nav-link" {% endif %}
+                  href="/blog/">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                  <a 
+                  class="nav-link" 
+                  href="/#pricingsection">Pricing</a>
+                </li>
+
+                <li class="nav-item d-sm-none d-block">
+                  <a class="nav-link" href="/contacts">Contact us</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+  
+      {% block content %}
+
+      {% endblock content %}
+      </main><!-- / Main content: .page-wrapper -->
+
+      {% block footernscripts  %}
+      {% endblock footernscripts  %}
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{% extends 'base_templates/base.html' %}
+{% block title%} My Awesome Cart Tracker{% endblock %}
+{% block content %}
+
+<div class="container">
+    {{response}}
+    <div class="col my-4">
+
+        <h2>Payment status regarding your order Id 
+
+            <a href="{{payment_url}}" class="button">Proceed To Pay</a>
+
+    </div>
+
+</div>
+{% endblock %}
+
+{% block footernscripts  %}
+{% load static %}
+{% include "base_templates/footer.html" %}
+
+
+<!-- Offcanvas mobile toggle btn -->
+<button class="btn btn-primary btn-sm sidebar-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#blog-sidebar" data-fixed-element>
+  <i class="ci-sidebar-right fs-base me-1 align-middle"></i>
+  Sidebar
+</button>
+      <!-- Main theme script-->
+      <script src="{% static 'main/js/theme.min.js' %}"></script>
+  {% endblock footernscripts  %}

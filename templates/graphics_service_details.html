@@ -1,0 +1,564 @@
+{% extends 'base_templates/base.html' %}
+{% block SEO %}
+    <meta charset="utf-8">
+    <title>Biz499 | Design & Graphics Services</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Starting @ just Rs. 4990, our service is one of the most affordable options available for those looking to create a professional website.">
+    <meta name="keywords" content="Website Development, web-app development, contruction agency webapp, websites in india, websites, website agency in surat, education websites, portfolio websites, contruction agency website, travel agency website, cab booking web-app, hospital web-app  ">
+    <meta name="author" content="Biz499 | Ads, Design & Development">
+{% endblock SEO %}
+
+{% block vendor_style %}
+{% load static %}
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/simplebar/dist/simplebar.min.css' %}"/>
+{% endblock vendor_style %}
+
+{% block content %}
+      <!-- Page title -->
+      <section class="container d-md-flex align-items-center justify-content-between py-3 py-md-4 mb-3">
+        <h1 class="mb-2 mb-md-0">Design & Graphics Services</h1>
+      </section>
+
+            <!-- Single product -->
+            <section class="container mb-lg-3">
+
+              <!-- Nav tabs -->
+              <div data-simplebar data-simplebar-auto-hide="false">
+                <ul class="nav nav-tabs flex-nowrap text-nowrap" role="tablist">
+                  <li class="nav-item">
+                    <a href="#social_media_posting" class="nav-link active" data-bs-toggle="tab" role="tab">Social Media Postings</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#grahics_design" class="nav-link" data-bs-toggle="tab" role="tab">Graphic Poster </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#grahics_video_small" class="nav-link" data-bs-toggle="tab" role="tab">Graphic Video (20s) </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#grahics_video_large" class="nav-link" data-bs-toggle="tab" role="tab">
+                      Wedding Invitation (50s)
+                    </a>
+                  </li>
+
+                  </li>
+                </ul>
+              </div>
+      
+          <div class="tab-content border-top pt-4">
+
+          <!-- social_media_posting -->
+          <div class="tab-pane active fade pt-3 show" id="social_media_posting " role="tabpanel">
+            <div class="row">
+              <div class="bg-secondary position-sticky col-lg-8 ps-lg-5 pe-lg-6">
+                <h3 class="h5 mb-3">Social Media Postings</h3>
+                <p>Boost your social media wtih our Social Media Package</p>
+                <ul class="ps-3">
+                  <li>Create a content calendar in advance.</li>
+                  <li>Create visually appealing and engaging posts across platforms.</li>
+                  <li>Ad Placement: Determine the optimal placement for each ad.</li>
+                  <li>CTAs to encourage your audience to engage with your content.</li>
+                  <li>Keep up with the latest social media trends and incorporate them into your content where relevant.</li>
+                  <li>Reporting: Provide regular performance reports</li>
+                </ul>
+                
+                <hr class="my-4">
+                <h3 class="h5 mb-3">Customer Care</h3>
+                <ul class="ps-0">
+                  <a href="tel:+919571670706">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-iphone"></i>
+                    <div class="ps-1">
+                      +91 9571670706
+                    </div>
+                  </li>
+                  </a>
+                  <a href="https://wa.me/+919106312511/">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-whatsapp"></i>
+                    <div class="ps-1">
+                      +91 9106312511
+                    </div>
+                  </li>
+                </a>
+
+                </ul>
+
+                <hr class="my-4">
+<form method="POST" class="row needs-validation" novalidate>
+  {% csrf_token %}
+                <div class="row pb-3">
+                   <div class="border-bottom">
+              <h2 class="h4 mb-4">Payment &amp; User details  </h2>
+            </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="first_name" class="form-label-lg">First Name</label>
+                  <input name="first_name" type="text" class="form-control form-control-lg" id="first_name" placeholder="Your first name" required>
+                  <div class="invalid-feedback">First Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="last_name" class="form-label-lg">Last Name</label>
+                  <input name="last_name" type="text" class="form-control form-control-lg" id="last_name" placeholder="Your last name" required>
+                  <div class="invalid-feedback">Last Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="email_id_pay" class="form-label-lg">Email</label>
+                  <input name="email_id_pay" type="email" class="form-control form-control-lg" id="email_id_pay" placeholder="Your email address" required>
+                  <div class="invalid-feedback">Please fill a valid email.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="phone" class="form-label-lg">Phone</label>
+                  <input name="phone" type="text" class="form-control form-control-lg" id="phone" placeholder="Your phone number" required>
+                  <div class="invalid-feedback">Please fill a valid phone number.</div>
+                </div>
+                <input type="hidden" name="amount" id="amount" value="17000" >
+                <input type="hidden" name="purpose" id="purpose" value="Social Media Posting" >
+                </div>
+              </div>
+              <aside class="col-lg-4">
+                <div class="position-sticky top-0">
+                 
+
+              <div class="row">
+
+        
+                <div class="bg-secondary rounded mb-3">
+                  <div class="border-bottom">
+                    <h2 class="h4 mb-0">Order totals</h2>
+                  </div>
+                  <ul class="list-unstyled border-bottom mb-0 p-4">
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="fw-bold">Content Cost:</span>
+                      <span class="fw-bold">₹7000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Design costs (1 Account):</span>
+                      <span>₹12000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Discount:</span>
+                      <span>₹2000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <span>Estimated sales tax:</span>
+                      <span>&mdash;</span>
+                    </li>
+                  </ul>
+                  <div class="d-flex justify-content-between mt-3">
+                    <span class="h5 mb-0">Order total:</span>
+                    <span class="h5 mb-0">₹17000.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="ex-check-2" checked required>
+  <label class="form-check-label" for="ex-check-2">By proceeding you agree to our <a href="/termsandconditions/">Terms & Conditions </a> and  <a href="/privacypolicy/">Privacy Policy</a></label>
+</div>
+        
+              <button type="submit" class="btn btn-primary btn-lg d-block w-100">Complete order</button>
+            </div>
+            </aside>
+</form>            
+            </div>
+
+
+
+          </div>          
+        <!-- social_media_posting  End -->
+
+
+          <!-- grahics_design details -->
+          <div class="tab-pane fade pt-3" id="grahics_design" role="tabpanel">
+            <div class="row">
+              <div class="bg-secondary position-sticky col-lg-8 ps-lg-5 pe-lg-6">
+                <h3 class="h5 mb-3">Graphic Poster </h3>
+                <p>Get a Professional Graphic Design Poster for only Rs. 499!</p>
+                <ul class="ps-3">
+                  <li>High-quality Design useing industry-leading tools like Photoshop and Adobe Illustrator to create a stunning and professional-looking poster.</li>
+                  <li>Affordable Pricing: For only Rs. 499, you can get a high-quality poster that will help you promote your brand, event, or product.</li>
+                  <li>Fast Turnaround Time: Our team will work quickly to deliver your poster within a few days, so you can start promoting your business as soon as possible.</li>
+                  <li>Customization: We'll work with you to create a poster that reflects your brand's style and message, ensuring that it stands out from the crowd.</li>
+                  <li>Attention-Grabbing Design: With our design skills, we'll make sure that your poster is eye-catching and attracts attention from potential customers, making it a valuable investment for your business.</li>
+                </ul>
+                
+                <hr class="my-4">
+                <h3 class="h5 mb-3">Customer Care</h3>
+                <ul class="ps-0">
+                  <a href="tel:+919571670706">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-iphone"></i>
+                    <div class="ps-1">
+                      +91 9571670706
+                    </div>
+                  </li>
+                  </a>
+                  <a href="https://wa.me/+919106312511/">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-whatsapp"></i>
+                    <div class="ps-1">
+                      +91 9106312511
+                    </div>
+                  </li>
+                </a>
+
+                </ul>
+
+                <hr class="my-4">
+<form method="POST" class="row needs-validation" novalidate>
+  {% csrf_token %}
+                <div class="row pb-3">
+                   <div class="border-bottom">
+              <h2 class="h4 mb-4">Payment &amp; User details  </h2>
+            </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="first_name" class="form-label-lg">First Name</label>
+                  <input name="first_name" type="text" class="form-control form-control-lg" id="first_name" placeholder="Your first name" required>
+                  <div class="invalid-feedback">First Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="last_name" class="form-label-lg">Last Name</label>
+                  <input name="last_name" type="text" class="form-control form-control-lg" id="last_name" placeholder="Your last name" required>
+                  <div class="invalid-feedback">Last Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="email_id_pay" class="form-label-lg">Email</label>
+                  <input name="email_id_pay" type="email" class="form-control form-control-lg" id="email_id_pay" placeholder="Your email address" required>
+                  <div class="invalid-feedback">Please fill a valid email.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="phone" class="form-label-lg">Phone</label>
+                  <input name="phone" type="text" class="form-control form-control-lg" id="phone" placeholder="Your phone number" required>
+                  <div class="invalid-feedback">Please fill a valid phone number.</div>
+                </div>
+                <input type="hidden" name="amount" id="amount" value="499" >
+                <input type="hidden" name="purpose" id="purpose" value="Single Graphic Poster" >
+                </div>
+              </div>
+              <aside class="col-lg-4">
+                <div class="position-sticky top-0">
+                 
+
+              <div class="row">
+
+        
+                <div class="bg-secondary rounded mb-3">
+                  <div class="border-bottom">
+                    <h2 class="h4 mb-0">Order totals</h2>
+                  </div>
+                  <ul class="list-unstyled border-bottom mb-0 p-4">
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="fw-bold">Design Cost:</span>
+                      <span class="fw-bold">₹499.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Other costs:</span>
+                      <span>₹0.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Discount:</span>
+                      <span>₹0.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <span>Estimated sales tax:</span>
+                      <span>&mdash;</span>
+                    </li>
+                  </ul>
+                  <div class="d-flex justify-content-between mt-3">
+                    <span class="h5 mb-0">Order total:</span>
+                    <span class="h5 mb-0">₹499.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="ex-check-2" checked required>
+  <label class="form-check-label" for="ex-check-2">By proceeding you agree to our <a href="/termsandconditions/">Terms & Conditions </a> and  <a href="/privacypolicy/">Privacy Policy</a></label>
+</div>
+        
+              <button type="submit" class="btn btn-primary btn-lg d-block w-100">Complete order</button>
+            </div>
+            </aside>
+</form>            
+            </div>
+
+
+
+          </div>          
+        <!-- grahics_design End -->
+
+
+
+          <!-- grahics_video_small details -->
+          <div class="tab-pane fade pt-3" id="grahics_video_small" role="tabpanel">
+            <div class="row">
+              <div class="bg-secondary position-sticky col-lg-8 ps-lg-5 pe-lg-6">
+                <h3 class="h5 mb-3">Graphic Video (20s)</h3>
+                <p>Experience the Power of Marketing with your Agency's Graphic Video!</p>
+                <ul class="ps-3">
+                  <li>Motion graphics using Premiere Pro or After Effects.</li>
+                  <li>Highlight the benefits of working with your agency.</li>
+                  <li>It could be a Social media post,</li>
+                  <li>or an Advertisement.</li>
+                  <li>or it could be a save the date video for your or your loved one's wedding.</li>
+                </ul>
+                
+                <hr class="my-4">
+                <h3 class="h5 mb-3">Customer Care</h3>
+                <ul class="ps-0">
+                  <a href="tel:+919571670706">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-iphone"></i>
+                    <div class="ps-1">
+                      +91 9571670706
+                    </div>
+                  </li>
+                  </a>
+                  <a href="https://wa.me/+919106312511/">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-whatsapp"></i>
+                    <div class="ps-1">
+                      +91 9106312511
+                    </div>
+                  </li>
+                </a>
+
+                </ul>
+
+                <hr class="my-4">
+<form method="POST" class="row needs-validation" novalidate>
+  {% csrf_token %}
+                <div class="row pb-3">
+                   <div class="border-bottom">
+              <h2 class="h4 mb-4">Payment &amp; User details  </h2>
+            </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="first_name" class="form-label-lg">First Name</label>
+                  <input name="first_name" type="text" class="form-control form-control-lg" id="first_name" placeholder="Your first name" required>
+                  <div class="invalid-feedback">First Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="last_name" class="form-label-lg">Last Name</label>
+                  <input name="last_name" type="text" class="form-control form-control-lg" id="last_name" placeholder="Your last name" required>
+                  <div class="invalid-feedback">Last Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="email_id_pay" class="form-label-lg">Email</label>
+                  <input name="email_id_pay" type="email" class="form-control form-control-lg" id="email_id_pay" placeholder="Your email address" required>
+                  <div class="invalid-feedback">Please fill a valid email.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="phone" class="form-label-lg">Phone</label>
+                  <input name="phone" type="text" class="form-control form-control-lg" id="phone" placeholder="Your phone number" required>
+                  <div class="invalid-feedback">Please fill a valid phone number.</div>
+                </div>
+                <input type="hidden" name="amount" id="amount" value="4990" >
+                <input type="hidden" name="purpose" id="purpose" value="20 Seconds Graphics Video" >
+                </div>
+              </div>
+              <aside class="col-lg-4">
+                <div class="position-sticky top-0">
+                 
+
+              <div class="row">
+
+        
+                <div class="bg-secondary rounded mb-3">
+                  <div class="border-bottom">
+                    <h2 class="h4 mb-0">Order totals</h2>
+                  </div>
+                  <ul class="list-unstyled border-bottom mb-0 p-4">
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="fw-bold">Graphics Charges:</span>
+                      <span class="fw-bold">₹4990.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Setup costs (all channels):</span>
+                      <span>₹0.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Discount:</span>
+                      <span>₹0.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <span>Estimated sales tax:</span>
+                      <span>&mdash;</span>
+                    </li>
+                  </ul>
+                  <div class="d-flex justify-content-between mt-3">
+                    <span class="h5 mb-0">Order total:</span>
+                    <span class="h5 mb-0">₹4990.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="ex-check-2" checked required>
+  <label class="form-check-label" for="ex-check-2">By proceeding you agree to our <a href="/termsandconditions/">Terms & Conditions </a> and  <a href="/privacypolicy/">Privacy Policy</a></label>
+</div>
+        
+              <button type="submit" class="btn btn-primary btn-lg d-block w-100">Complete order</button>
+            </div>
+            </aside>
+</form>            
+            </div>
+
+
+
+          </div>          
+        <!-- grahics_video_small End -->
+
+          <!-- grahics_video_large details -->
+          <div class="tab-pane fade pt-3" id="grahics_video_small" role="tabpanel">
+            <div class="row">
+              <div class="bg-secondary position-sticky col-lg-8 ps-lg-5 pe-lg-6">
+                <h3 class="h5 mb-3">Wedding Invitation Video (50s)</h3>
+                <p>Experience the Perfect Wedding with Our Marketing Agency!</p>
+                <ul class="ps-3">
+                  <li>Visually stunning wedding video invitation using Adobe Premiere Pro, After Effects, Photothsop, illustrator, Canva etc.</li>
+                  <li>Showcase your wedding's venue selection, reception, mehendi etc.</li>
+                  <li>Free edits</li>
+                  <li>20 hours of designing.</li>
+                  <li>Hassle free payment.</li>
+                </ul>
+                
+                <hr class="my-4">
+                <h3 class="h5 mb-3">Customer Care</h3>
+                <ul class="ps-0">
+                  <a href="tel:+919571670706">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-iphone"></i>
+                    <div class="ps-1">
+                      +91 9571670706
+                    </div>
+                  </li>
+                  </a>
+                  <a href="https://wa.me/+919106312511/">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-whatsapp"></i>
+                    <div class="ps-1">
+                      +91 9106312511
+                    </div>
+                  </li>
+                </a>
+
+                </ul>
+
+                <hr class="my-4">
+<form method="POST" class="row needs-validation" novalidate>
+  {% csrf_token %}
+                <div class="row pb-3">
+                   <div class="border-bottom">
+              <h2 class="h4 mb-4">Payment &amp; User details  </h2>
+            </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="first_name" class="form-label-lg">First Name</label>
+                  <input name="first_name" type="text" class="form-control form-control-lg" id="first_name" placeholder="Your first name" required>
+                  <div class="invalid-feedback">First Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="last_name" class="form-label-lg">Last Name</label>
+                  <input name="last_name" type="text" class="form-control form-control-lg" id="last_name" placeholder="Your last name" required>
+                  <div class="invalid-feedback">Last Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="email_id_pay" class="form-label-lg">Email</label>
+                  <input name="email_id_pay" type="email" class="form-control form-control-lg" id="email_id_pay" placeholder="Your email address" required>
+                  <div class="invalid-feedback">Please fill a valid email.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="phone" class="form-label-lg">Phone</label>
+                  <input name="phone" type="text" class="form-control form-control-lg" id="phone" placeholder="Your phone number" required>
+                  <div class="invalid-feedback">Please fill a valid phone number.</div>
+                </div>
+                <input type="hidden" name="amount" id="amount" value="9000" >
+                <input type="hidden" name="purpose" id="purpose" value="50 Seconds Graphics Video" >
+                </div>
+              </div>
+              <aside class="col-lg-4">
+                <div class="position-sticky top-0">
+                 
+
+              <div class="row">
+
+        
+                <div class="bg-secondary rounded mb-3">
+                  <div class="border-bottom">
+                    <h2 class="h4 mb-0">Order totals</h2>
+                  </div>
+                  <ul class="list-unstyled border-bottom mb-0 p-4">
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="fw-bold">Graphics Charges:</span>
+                      <span class="fw-bold">₹10000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Setup costs (all channels):</span>
+                      <span>₹0.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Discount:</span>
+                      <span>₹1000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <span>Estimated sales tax:</span>
+                      <span>&mdash;</span>
+                    </li>
+                  </ul>
+                  <div class="d-flex justify-content-between mt-3">
+                    <span class="h5 mb-0">Order total:</span>
+                    <span class="h5 mb-0">₹9000.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="ex-check-2" checked required>
+  <label class="form-check-label" for="ex-check-2">By proceeding you agree to our <a href="/termsandconditions/">Terms & Conditions </a> and  <a href="/privacypolicy/">Privacy Policy</a></label>
+</div>
+        
+              <button type="submit" class="btn btn-primary btn-lg d-block w-100">Complete order</button>
+            </div>
+            </aside>
+</form>            
+            </div>
+
+
+
+          </div>          
+        <!-- grahics_video_large End -->
+
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+      {% endblock content %}
+      {% block footernscripts  %}
+      {% include "base_templates/footer.html" %}
+  
+  
+      <!-- Offcanvas mobile toggle btn -->
+      <button class="btn btn-primary btn-sm sidebar-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#blog-sidebar" data-fixed-element>
+        <i class="ci-sidebar-right fs-base me-1 align-middle"></i>
+        Sidebar
+      </button>
+  
+  
+      <!-- Vendor scripts: js libraries and plugins-->
+      <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'vendor/simplebar/dist/simplebar.min.js' %}"></script>
+      <script src="{% static 'vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js' %}"></script>
+      <script src="{% static 'vendor/jarallax/dist/jarallax.min.js' %}"></script>
+  
+  
+      <!-- Main theme script-->
+      <script src="{% static 'main/js/theme.min.js' %}"></script>
+  {% endblock footernscripts  %}

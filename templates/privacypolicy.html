@@ -1,0 +1,60 @@
+{% extends 'base_templates/base.html' %}
+
+{% block SEO %}
+    <meta charset="utf-8">
+    <title>Biz499 | Privacy Policy</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="biz499 is a marketing agency that provides affordable, professional marketing services to small businesses. We offer a wide range of services including social media marketing, search engine optimization, and pay-per-click management. We are committed to helping our clients grow their businesses and reach their goals. Contact us today to learn more about how we can help you grow your business.">
+    <meta name="keywords" content="marketing, sales, app develpment, web development, digital marketingbootstrap, business, creative agency, portfolio,biz499, digital marketing agency in surat">
+    <meta name="author" content="Biz499">
+{% endblock SEO %}
+
+{% block vendor_style %}
+{% load static %}
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/simplebar/dist/simplebar.min.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/lightgallery.js/dist/css/lightgallery.min.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/tiny-slider/dist/tiny-slider.css' %}"/>
+{% endblock vendor_style %}
+{% block content %}
+<section class="p-4">
+    <h1>Privacy Policy</h1>
+	<p>Biz499 Marketing Solutions ("us", "we", or "our") operates the www.biz499.com website (the "Service"). We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This page informs you of our policies regarding the collection, use and disclosure of Personal Information we receive from users of the Service.</p>
+	<h2>Information Collection and Use</h2>
+	<p>While using our Service, we may collect personal information from you such as your name, email address, postal address, and phone number ("Personal Information"). We will collect and use Personal Information solely with the objective of fulfilling the purposes specified by us and for other compatible purposes, unless we obtain your consent or as required by law.</p>
+	<h2>Consent</h2>
+	<p>By using our Service, you consent to our Privacy Policy and agree to its terms.</p>
+	<h2>Disclosure of Personal Information</h2>
+	<p>We may disclose your Personal Information to third-party service providers who perform services on our behalf, such as payment processing, data analysis, email delivery, and other similar services. We will only disclose your Personal Information to the extent necessary for the third-party service provider to perform the services on our behalf and will require the third-party service provider to use your Personal Information solely for the purposes for which it was disclosed.</p>
+	<h2>Retention of Personal Information</h2>
+	<p>We will retain your Personal Information for as long as necessary to fulfill the purposes for which it was collected, or as required by law.</p>
+	<h2>Security</h2>
+	<p>We are committed to protecting the security of your Personal Information and have implemented reasonable physical, electronic, and administrative safeguards to help protect your Personal Information from unauthorized access, use, or disclosure.</p>
+	<h2>Access and Correction</h2>
+	<p>You have the right to access and correct your Personal Information that we hold about you. If you would like to access or correct your Personal Information, please contact us using the contact information provided below.</p>
+	<h2>Grievance Officer</h2>
+	<p>If you have any complaints or grievances about our handling of your Personal Information, please contact our Grievance Officer at the following email address:</p>
+	<p>Name: Anshul Dani</p>
+	<p>Email: anshul@biz499.com</p>
+	<p>Phone: +91 9571670706</p>
+	<h2>Changes to This Privacy Policy</h2>
+	<p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
+	<h2>Contact Us</h2>
+	<p>If you have any questions about our Privacy Policy, please contact us at:</p>
+	<p>Name: Biz499 Marketing Solutions</p>
+	<p>Email: hello@biz499.com</p>
+	<p>Phone: +91-9106312511</p>
+	<p>Address: FF 231, Happy Hallmark Shoppers, Vesu, Surat, India 395007</p>
+
+</section>
+
+{% endblock content %}
+
+{% block footernscripts  %}
+{% include "base_templates/footer.html" %}
+    <!-- Main theme script-->
+    <script src="{% static 'main/js/theme.min.js' %}"></script>
+
+{% endblock footernscripts  %}
+

@@ -1,0 +1,58 @@
+{% load static %}
+
+<section class="container mb-4 mb-sm-5 mt-md-4 mt-lg-0 px-3 py-lg-6 py-5">
+  <h2 class="h3 mb-5 pb-2 text-center">Let's build something amazing together!</h2>
+  <div class="row justify-content-center px-2 px-sm-0">
+    <div class="col-md-3 col-sm-4 col px-2 px-sm-3">
+      <h3 class="h6 pb-lg-3 pb-2 text-uppercase text-muted text-center">Follow us</h3>
+      <a class="d-block" href="https://www.dribbble.com/biz499">
+        <img class="rounded lazyload" data-src="{% static 'img/creative-agency/logo/block-dribbble.svg' %}" alt="Dribble">
+      </a>
+      <a class="mt-sm-4 mt-3 d-block" href="https://www.behance.com/biz499">
+        <img class="rounded lazyload" data-src="{% static 'img/creative-agency/logo/block-behance.svg' %}" alt="Behance">
+      </a>
+    </div>
+    <div class="divider-vertical d-sm-block d-none offset-sm-1"></div>
+    <div class="col-md-3 col-sm-4 col offset-sm-1 px-2 px-sm-3">
+      <h3 class="h6 pb-lg-3 pb-2 text-uppercase text-muted text-center">Get in touch</h3>
+      <a class="d-block" href="https://www.upwork.com/freelancers/~01388151cf37db190d">
+        <img class="rounded lazyload" data-src="{% static 'img/creative-agency/logo/block-upwork.svg' %}" alt="Upwork">
+      </a>
+      <a class="mt-sm-4 mt-3 d-block" href="mailto:contactbiz49@gmail.com">
+        <img class="rounded lazyload" data-src="{% static 'img/creative-agency/logo/block-email.svg' %}" alt="Email">
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var lazyloadImages = document.querySelectorAll(".lazyload");
+    var lazyloadThrottleTimeout;
+
+    function lazyload() {
+      if (lazyloadThrottleTimeout) {
+        clearTimeout(lazyloadThrottleTimeout);
+      }
+
+      lazyloadThrottleTimeout = setTimeout(function() {
+        var scrollTop = window.pageYOffset;
+        lazyloadImages.forEach(function(img) {
+          if (img.offsetTop < (window.innerHeight + scrollTop)) {
+            img.src = img.dataset.src;
+            img.classList.remove('lazyload');
+          }
+        });
+        if (lazyloadImages.length === 0) {
+          document.removeEventListener("scroll", lazyload);
+          window.removeEventListener("resize", lazyload);
+          window.removeEventListener("orientationChange", lazyload);
+        }
+      }, 20);
+    }
+
+    document.addEventListener("scroll", lazyload);
+    window.addEventListener("resize", lazyload);
+    window.addEventListener("orientationChange", lazyload);
+  });
+</script>

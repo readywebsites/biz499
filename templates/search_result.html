@@ -1,0 +1,249 @@
+{% extends 'base_templates/base.html' %}
+
+{% block SEO %}
+    <meta charset="utf-8">
+    <title>Biz499 | Marketing Agency - Surat</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Biz499 - Creative Marketing Agency">
+    <meta name="keywords" content="website agency in surat, start business in surat, creative marketing agency, digital marketing services in surat, graphics design in surat, affordable website development, apps, websites, graphics, freelance, freelancer, facebook marketing, google marketing, creative">
+    <meta name="author" content="Biz499 - ">
+{% endblock SEO %}
+
+{% block vendor_style %}
+{% load static %}
+<!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/simplebar/dist/simplebar.min.css' %}"/>
+{% endblock vendor_style %}
+
+{% block content %}
+      <!-- Page title-->
+      <section class="container text-center mt-5 pt-md-4">
+        <h3 class="h6 mb-2 text-uppercase">Articles</h3>
+        <h2 class="h1 mb-md-5 mb-4 pb-2">Our blog</h2>
+      </section>
+
+
+      <!-- Page content -->
+      <section class="container mb-lg-6 mb-5">
+        <div class="row">
+
+          <!-- Content -->
+          <div class="col-lg-8">
+
+            <!-- Categories navs -->
+            <div class="mx-lg-n1 mb-4 pb-3" data-simplebar data-simplebar-auto-hide="false">
+              <ul class="nav justify-content-lg-start justify-content-md-center flex-nowrap text-nowrap">
+                {% for cat in category_count %}
+                <li class="nav-item px-1">
+                  <a class="nav-link" href="#">
+                    {{cat.categories__title}}
+                    <sup class="ms-1">{{cat.categories__title__count}}</sup>
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <!-- Post preview: basic card -->
+            {% for blog in bloglist %}
+            <article class="card border-0 image-scale mb-grid-gutter pb-md-grid-gutter pb-3">
+              <a class="image-inner card-header mb-3 p-0 border-0 rounded" href="{{blog.get_absoulte_url}}">
+                <img src="{{ blog.thumbnail_1620_720.url }}" alt="Blog card image">
+              </a>
+              <div class="card-body p-0">
+                <ul class="nav nav-muted mb-2">
+                  <li class="nav-item me-2">
+                    {% for cat in blog.categories.all %}
+                    <a class="nav-link d-inline-block me-1 p-0 fs-sm fw-normal" href="#">
+                      {{cat}}
+                    </a>
+                    {% endfor %}
+                    <span class="text-border">|</span>
+                  </li>
+                  <li class="nav-item me-2">
+                    <a class="nav-link d-inline-block me-1 p-0 fs-sm fw-normal" href="#">
+                      {{ blog.publish_date }}
+                    </a>
+                  </li>
+                  <li class="nav-item ms-sm-auto">
+                    <a class="nav-link d-inline-block me-2 p-0 fs-sm fw-normal" href="#">
+                      By: <span class="fw-bold">{{ blog.author.name }}</span>
+                    </a>
+                  </li>
+                </ul>
+                <h3 class="h5 mb-2 nav-dark">
+                  <a class="nav-link" href="{{blog.get_absoulte_url}}">{{ blog.title }}</a>
+                </h3>
+                <p class="mb-3">{{ blog.overview }}</p>
+              </div>
+              <div class="card-footer p-0 border-0">
+                <div class="h6 mb-0">
+                  <a class="nav-link py-3" href="{{blog.get_absolute_url}}">Read more</a>
+                  <i class="ci-arrow-right text-primary align-middle h5 mb-0 ms-2"></i>
+                </div>
+              </div>
+            </article>
+            {% endfor %}
+            <!-- Pagination -->
+            <nav class="mx-n2" aria-label="Page navigation example">
+              <ul class="pagination mb-0">
+                <li class="page-item d-sm-none">
+                  <span class="page-link page-link-static">1 / 5</span>
+                </li> 
+                <!-- <li class="page-item active d-none d-sm-block" aria-current="page">
+                  <span class="page-link">1
+                    <span class="visually-hidden">(current)</span>
+                  </span>
+                </li>
+                <li class="page-item d-none d-sm-block">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item d-none d-sm-block">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item d-none d-sm-block">
+                  <a class="page-link" href="#">4</a>
+                </li> -->
+
+                {% if bloglist.number|add:'-4' > 1 %}
+                    <li class="page-item d-none d-sm-block"><a class="page-link" href="?q={{query}}&page={{ page_obj.number|add:'-5' }}">&hellip;</a></li>
+                {% endif %}
+
+                {% for i in bloglist.paginator.page_range %}
+                    {% if bloglist.number == i %}
+                        <li class="page-item active d-none d-sm-block" aria-current="page"><span class="page-link">{{ i }} <span class="visually-hidden">(current)</span></span></span></li>
+                    {% elif i > bloglist.number|add:'-5' and i < bloglist.number|add:'5' %}
+                        <li class="page-item d-none d-sm-block"><a class="page-link" href="?q={{query}}&page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.paginator.num_pages > page_obj.number|add:'4' %}
+                    <li><a href="?q={{query}}&page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+                {% endif %}
+
+                {% if bloglist.has_next %}
+                <li class="page-item">
+                  <a class="page-link" href="?q={{query}}&{{ page_request_variable }}={{ bloglist.next_page_number }} ">
+                    <i class="ci-arrow-right"></i>
+                  </a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <i class="ci-arrow-right"></i>
+                </li>
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+
+
+          <!-- Sidebar -->
+          <aside class="col-lg-4">
+            <div class="offcanvas offcanvas-collapse offcanvas-end ps-lg-4 ps-xl-5" id="blog-sidebar">
+              <div class="offcanvas-header align-items-center shadow mb-3">
+                <h5 class="h4 mb-0">Sidebar</h5>
+                <button class="btn-close me-n1" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body pt-4 pt-lg-0" data-simplebar data-simplebar-auto-hide="true">
+
+                <!-- Search -->
+                <div class="mb-sm-grid-gutter mb-4 pb-2 pb-lg-grid-gutter">
+                  <form action="{% url 'search' %}" class="search-form">
+                  <div class="input-group">
+                    <input class="form-control rounded pe-5" type="text" name="q" placeholder="Search the blog">
+                    <button class="btn btn-link px-0 position-absolute top-50 end-0 translate-middle-y me-3 zindex-5" type="button">
+                      <i class="ci-search mt-n1"></i>
+                    </button>
+                  </div>
+                  </form>
+                </div>
+
+                <!-- Widget: Featured entries list -->
+                <div class="widget mb-sm-grid-gutter mb-4 pb-2 pb-lg-grid-gutter">
+                  <h3 class="h6 mb-4 text-uppercase">Recent posts</h3>
+                  <ul class="list-unstyled">
+                    {% for blog in latest %}
+                    <li class="d-flex align-items-start image-scale mb-4">
+                      <a class="flex-shrink-0 image-inner rounded me-3" style="width: 100px;" href="{{blog.get_absolute_url}}">
+                        <img src="{{ blog.square_small_thumbnail_200_200.url }}" alt="Media">
+                      </a>
+                      <div class="ps-1">
+                        <span class="d-block mb-1 fs-sm text-muted">{{blog.publish_date}}</span>
+                        <h4 class="h6 mb-1 nav-dark">
+                          <a class="nav-link fw-bold" href="{{blog.get_absolute_url}}">{{blog.title}}</a>
+                        </h4>
+                      </div>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+
+                <!-- Widget: Tags -->
+                <div class="widget mb-sm-grid-gutter mb-4 pb-2 pb-lg-grid-gutter">
+                  <h3 class="h6 mb-4 text-uppercase">Tags</h3>
+                  {% for cat in category_list %}
+                  <a class="btn-tag rounded-pill me-1 mb-2" href="/search/?q={{cat}}">#{{cat}}</a>
+                  {% endfor %}
+                </div>
+
+                <!-- Widget: Media grid -->
+                <div class="widget mb-sm-grid-gutter mb-4 pb-2 pb-lg-grid-gutter">
+                  <h3 class="h6 mb-4 text-uppercase">latest projects</h3>
+                  <div class="media-grid">
+                    {% for port in portfolio_latest %}
+                    <div class="media-grid-item">
+                      <a class="media-grid-inner" href="{{port.get_absolute_url}}">
+                        <img src="{{port.photo_2.url}}" alt="Media grid image">
+                      </a>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+
+                <!-- Widget: Social buttons -->
+                <div class="widget mb-sm-grid-gutter mb-4 pb-2 pb-lg-grid-gutter">
+                  <h3 class="h6 mb-4 text-uppercase">Social media</h3>
+                  <a href="#" class="btn-social bs-solid rounded-circle me-2">
+                    <i class="ci-facebook"></i>
+                  </a>
+                  <a href="#" class="btn-social bs-solid rounded-circle me-2">
+                    <i class="ci-instagram"></i>
+                  </a>
+                  <a href="#" class="btn-social bs-solid rounded-circle me-2">
+                    <i class="ci-twitter"></i>
+                  </a>
+                  <a href="#" class="btn-social bs-solid rounded-circle me-2">
+                    <i class="ci-behance"></i>
+                  </a>
+                  <a href="#" class="btn-social bs-solid rounded-circle me-2">
+                    <i class="ci-dribbble"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+      {% endblock content %}
+    
+
+
+    {% block footernscripts  %}
+    {% include "base_templates/footer.html" %}
+
+    <!-- Offcanvas mobile toggle btn -->
+    <button class="btn btn-primary btn-sm sidebar-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#blog-sidebar" data-fixed-element>
+      <i class="ci-sidebar-right fs-base me-1 align-middle"></i>
+      Sidebar
+    </button>
+
+
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/simplebar/dist/simplebar.min.js' %}"></script>
+    <script src="{% static 'vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js' %}"></script>
+
+    <!-- Main theme script-->
+    <script src="{% static 'js/theme.min.js' %}"></script>
+    {% endblock footernscripts  %}
+

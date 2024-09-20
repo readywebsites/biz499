@@ -1,0 +1,291 @@
+{% extends 'base_templates/base.html' %}
+
+{% block SEO %}
+    <meta charset="utf-8">
+    <title>Biz499 | Portfolio | {{portfolio_detail.user_company}}</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="biz499 is a marketing agency that provides affordable, professional marketing services to small businesses. We offer a wide range of services including social media marketing, search engine optimization, and pay-per-click management. We are committed to helping our clients grow their businesses and reach their goals. Contact us today to learn more about how we can help you grow your business.">
+    <meta name="keywords" content="{% for keyword in portfolio_list %} {{keyword.filter_category}}, {{keyword.project_category}}, {{keyword.project_strategy}}, {{keyword.project_design}}  {% endfor %} ">
+    <meta name="author" content="Biz499 | Marketing Agency">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://biz499.com{{portfolio_detail.photo_1.url}}" /> 
+{% endblock SEO %}
+
+{% block vendor_style %}
+{% load static %}
+
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/tiny-slider/dist/tiny-slider.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/lightgallery.js/dist/css/lightgallery.min.css' %}"/>
+{% endblock vendor_style %}
+
+{% block content %}
+      <!-- Hero -->
+      <section class="jarallax d-flex align-items-stretch min-vh-100 bg-dark mb-2 mb-lg-0 py-5 py-lg-6" data-jarallax data-speed="0.6">
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-60"></div>
+        <div class="jarallax-img" style="background-image: url({{portfolio_detail.project_hero_image.url}});"></div>
+        <div class="position-relative container d-flex flex-column justify-content-between mt-5 py-3 pt-md-5 py-lg-3 zindex-2">
+          <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-sm-between">
+            <ul class="nav nav-light">
+              <li class="nav-item me-2">
+                <a class="nav-link d-inline-block me-2 p-0 fw-normal" href="#">
+                  {{portfolio_detail.date_published}}
+                </a>
+                <span class="text-border">|</span>
+              </li>
+              <li class="nav-item me-2">
+                <span class="text-light">{{portfolio_detail.filter_category}}</span>
+              </li>
+            </ul>
+            <div class="d-flex mt-sm-0 mt-3 ms-sm-0 ms-auto">
+              <div class="icon-dropdown icon-dropstart">
+                <a class="btn-social bs-solid rounded-circle bs-light" data-bs-toggle="tooltip" data-bs-placement="top" title="Share">
+                  <i class="ci-share"></i>
+                </a>
+                <ul class="icon-drop-menu">
+                  <li class="icon-drop-item">
+                    <a href="#" class="btn-social bs-solid rounded-circle bs-light">
+                      <i class="ci-linkedin"></i>
+                    </a>
+                  </li>
+                  <li class="icon-drop-item">
+                    <a href="#" class="btn-social bs-solid rounded-circle bs-light">
+                      <i class="ci-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="icon-drop-item">
+                    <a href="#" class="btn-social bs-solid rounded-circle bs-light">
+                      <i class="ci-facebook"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <a href="#" class="btn-social bs-solid rounded-circle bs-light ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Go to project">
+                <i class="ci-arrow-share"></i>
+              </a>
+            </div>
+          </div>
+          <div class="d-flex flex-column justify-content-between h-100 mt-4 mt-md-5 pt-4">
+            <div class="row justify-content-center">
+              <div class="col-lg-8 col-md-10 text-center">
+                <h1 class="display-1 mb-4 pb-md-3 text-light">{{portfolio_detail.main_project_title}}</h1>
+                <p class="lead text-light">{{portfolio_detail.description}}</p>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-lg-8 col-md-10 text-center">
+                <a href="#section-goal" data-scroll class="fs-sm fw-bold text-light text-decoration-none">
+                  <i class="ci-arrow-down h4 mt-n1 me-2 mb-0 fw-normal text-light align-middle"></i>
+                  View project
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Project goal -->
+      <section class="container py-5 py-lg-6" id="section-goal">
+        <div class="row justify-content-center mb-lg-6 mb-5">
+          <div class="col-lg-8 col-md-10">
+            <h2 class="h6 mb-3 pb-1 text-uppercase">Project Result</h2>
+            {{portfolio_detail.project_result|safe}}
+            <div class="row g-0 justify-content-between">
+              <div class="col-sm-3 col-6 mb-sm-0 mb-4 pb-sm-0 pb-1">
+                <h3 class="h6 mb-2">Strategy</h3>
+                <ul class="list-unstyled mb-0 fs-sm">
+                  {% for strategy in portfolio_detail.project_strategy.all %}
+                  <li>{{strategy}}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <span class="divider-vertical d-sm-block d-none"></span>
+              <div class="col-sm-3 col-6 mb-sm-0 mb-4 pb-sm-0 pb-1">
+                <h3 class="h6 mb-2">Category</h3>
+                <ul class="list-unstyled mb-0 fs-sm">
+                  {% for category in portfolio_detail.project_category.all %}
+                  <li>{{category}}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <span class="divider-vertical d-sm-block d-none"></span>
+              <div class="col-sm-3 col-6 mb-sm-0 mb-4 pb-sm-0 pb-1">
+                <h3 class="h6 mb-2">Design</h3>
+                <ul class="list-unstyled mb-0 fs-sm">
+                  {% for design in portfolio_detail.project_design.all %}
+                  <li>{{design}}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <span class="divider-vertical d-sm-block d-none"></span>
+              <div class="col-sm-3 col-6 mb-sm-0 mb-4 pb-sm-0 pb-1">
+                <h3 class="h6 mb-2 pb-1">Client</h3>
+                <img src="{{portfolio_detail.company_logo.url}}" alt="{{portfolio_detail.user_company}}">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="position-relative bg-size-cover bg-position-center bg-repeat-0 rounded overflow-hidden text-center py-6" style="background-image: url({{portfolio_detail.project_video_thumbnail.url}});">
+          <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-60 rounded"></div>
+          <div class="position-relative zindex-2 my-5 py-5">
+            <a class="btn-video btn-video-lg my-3" href="{{portfolio_detail.project_video_link}}" data-gallery-video></a>
+            <div class="pt-1"></div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Challenge -->
+      <section class="container mt-2 mt-lg-0 mb-lg-6 mb-5">
+        <div class="row justify-content-center mb-lg-6 mb-5">
+          <div class="col-lg-8 col-md-10">
+            <h2 class="h6 mb-3 pb-1 text-uppercase">Challenge</h2>
+            {{portfolio_detail.project_challenge|safe}}
+          </div>
+        </div>
+        <div class="row mb-lg-6 mb-5">
+          <div class="col-sm-6 mb-sm-0 mb-3">
+            <img class="rounded" src="{{portfolio_detail.photo_1.url}}" alt="Project image">
+          </div>
+          <div class="col-sm-6">
+            <img class="rounded" src="{{portfolio_detail.photo_2.url}}" alt="Project image">
+          </div>
+        </div>
+        <div class="row mb-lg-6 mb-5">
+          <div class="col-lg-8 col-sm-10 mx-auto">
+            <blockquote class="blockquote mb-0">
+              <p class="pb-2">{{portfolio_detail.user_testimonial}}</p>
+              <footer class="d-flex align-items-center">
+                <img class="me-3 rounded-circle" src="{{portfolio_detail.user_profile_pic.url}}" width="72" alt="{{portfolio_detail.user_name}}">
+                <div>
+                  <h3 class="h6 mb-0">{{portfolio_detail.user_name}}</h3>
+                  <span class="fs-sm text-muted">{{portfolio_detail.user_position}}, {{portfolio_detail.user_company}}</span>
+                </div>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+        <img class="rounded" src="{{portfolio_detail.photo_3.url}}" alt="Project image">
+      </section>
+
+
+      <!-- Achievements -->
+      <section class="container mb-lg-6 mb-5 pt-3 pt-lg-0">
+        <h3 class="h6 mb-2 text-uppercase">Honors</h3>
+        <div class="row">
+          <div class="col-xl-4 col-lg-5">
+            <h2 class="h1 mb-lg-5 mb-4">The awards won by our studio</h2>
+          </div>
+          <div class="col-lg-7 mt-2 d-flex flex-sm-row flex-column align-items-start justify-content-sm-between flex-lg-nowrap flex-wrap ms-auto">
+            <div class="d-flex flex-sm-column justify-content-center mb-lg-0 mb-3 px-3">
+              <a href="#" class="swap-image me-sm-0 me-3 mb-3">
+                <img src="{% static 'img/creative-agency/logo/webby.svg' %}" class="swap-to" width="60" alt="Brand logo hover">
+                <img src="{% static '/img/creative-agency/logo/webby-g.svg' %}" class="swap-from" width="60" alt="Brand logo">
+              </a>
+              <span class="d-block pt-1 fs-sm text-dark text-nowrap">4x mobile of the day</span>
+            </div>
+            <div class="d-flex flex-sm-column justify-content-center mb-lg-0 mb-3 px-3">
+              <a href="#" class="swap-image me-sm-0 me-3 mb-3">
+                <img src="{% static 'img/creative-agency/logo/cssda.svg' %}" class="swap-to" width="60" alt="Brand logo hover">
+                <img src="{% static 'img/creative-agency/logo/cssda-g.svg' %}" class="swap-from" width="60" alt="Brand logo">
+              </a>
+              <span class="d-block pt-1 fs-sm text-dark text-nowrap">1x Kudos</span>
+            </div>
+            <div class="d-flex flex-sm-column justify-content-center mb-lg-0 mb-3 px-3">
+              <a href="#" class="swap-image me-sm-0 me-3 mb-3">
+                <img src="{% static 'img/creative-agency/logo/awwwards.svg' %}" class="swap-to" width="60" alt="Brand logo hover">
+                <img src="{% static 'img/creative-agency/logo/awwwards-g.svg' %}" class="swap-from" width="60" alt="Brand logo">
+              </a>
+              <span class="d-block pt-1 fs-sm text-dark text-nowrap">3x website of the day</span>
+            </div>
+            <div class="d-flex flex-sm-column justify-content-center mb-lg-0 mb-3 px-3">
+              <a href="#" class="swap-image me-sm-0 me-3 mb-3">
+                <img src="{% static 'img/creative-agency/logo/fwa.svg' %}" class="swap-to" width="60" alt="Brand logo hover">
+                <img src="{% static 'img/creative-agency/logo/fwa-g.svg' %}" class="swap-from" width="60" alt="Brand logo">
+              </a>
+              <span class="d-block pt-1 fs-sm text-dark text-nowrap">2x best website</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Latest projects -->
+      <section class="bg-secondary py-lg-6 pt-5 pb-4">
+        <div class="container pt-2 pt-lg-0">
+          <h3 class="h6 mb-2 text-uppercase">Enjoy our latest projects</h3>
+          <div class="mb-lg-5 mb-4 d-flex justify-content-between">
+            <h2 class="h1 mb-0">Selected work</h2>
+            <div class="tns-custom-controls tns-controls-inverse mb-md-n4" id="tns-portfolio-controls" tabindex="0">
+              <button type="button" data-controls="prev" tabindex="-1">
+                <i class="ci-arrow-left"></i>
+              </button>
+              <button type="button" data-controls="next" tabindex="-1">
+                <i class="ci-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="container px-0">
+
+          <!-- Carousel -->
+          <div class="tns-carousel-wrapper mt-n2 mb-lg-5 mb-4">
+            <div class="tns-carousel-inner" data-carousel-options='{
+              "nav": false,
+              "controlsContainer": "#tns-portfolio-controls",
+              "responsive": {
+                "0": {
+                  "items": 1
+                },
+                "576": {
+                  "items": 2
+                },
+                "768": {
+                  "items": 3
+                }
+              }
+            }'>
+            {% for work in selected_work_list %}
+              <div class="rounded">
+                <a class="portfolio-card-scale text-decoration-none mt-3 mx-3" href="{{work.get_absolute_url}}">
+                  <div class="portfolio-card-img">
+                    <img src="{{work.photo_1.url}}" alt="Card image">
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">{{obj.title}}</h3>
+                    {% for cat in work.project_category.all %}
+                    <span class="fs-sm text-muted">{{cat}}</span>
+                    {% endfor %}
+                  </div>
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Contact links -->
+{% include "base_templates/contact_list.html" %}
+
+{% endblock content %}
+
+{% block footernscripts  %}
+<!-- Footer -->
+{% include "base_templates/footer.html" %}
+
+
+
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js' %}"></script>
+    <script src="{% static 'vendor/jarallax/dist/jarallax.min.js' %}"></script>
+    <script src="{% static 'vendor/tiny-slider/dist/min/tiny-slider.js' %}"></script>
+    <script src="{% static 'vendor/lightgallery.js/dist/js/lightgallery.min.js' %}"></script>
+    <script src="{% static 'vendor/lg-video.js/dist/lg-video.min.js' %}"></script>
+
+    <!-- Main theme script-->
+    <script src="{% static 'main/js/theme.min.js' %}"></script>
+{% endblock footernscripts  %}

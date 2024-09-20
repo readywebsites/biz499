@@ -1,0 +1,46 @@
+{% extends 'base_templates/base.html' %}
+
+{% block SEO %}
+    <meta charset="utf-8">
+    <title>Biz499 | Terms & Conditions</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="biz499 is a marketing agency that provides affordable, professional marketing services to small businesses. We offer a wide range of services including social media marketing, search engine optimization, and pay-per-click management. We are committed to helping our clients grow their businesses and reach their goals. Contact us today to learn more about how we can help you grow your business.">
+    <meta name="keywords" content="marketing, sales, app develpment, web development, digital marketingbootstrap, business, creative agency, portfolio,biz499, digital marketing agency in surat">
+    <meta name="author" content="Biz499">
+{% endblock SEO %}
+
+{% block vendor_style %}
+{% load static %}
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/simplebar/dist/simplebar.min.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/lightgallery.js/dist/css/lightgallery.min.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/tiny-slider/dist/tiny-slider.css' %}"/>
+{% endblock vendor_style %}
+{% block content %}
+
+<section class="p-4">
+<h1>Terms and Conditions</h1>
+<p>These terms and conditions ("Terms", "Agreement") are an agreement between you ("User", "you") and Biz499 Marketing Solutions ("Company", "us", "we" or "our"). This Agreement sets forth the general terms and conditions of your use of the website and any of its products or services (collectively, "Website" or "Services").</p>
+<h2>Accounts</h2>
+<p>When you create an account with us, you must provide us with accurate, complete and up-to-date information. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.</p>
+<h2>Intellectual Property</h2>
+<p>The Service and its original content, features and functionality are and will remain the exclusive property of the Company and its licensors. The Service is protected by copyright, trademark, and other laws of India and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of the Company.</p>
+<h2>Termination</h2>
+<p>We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.</p>
+<h2>Governing Law</h2>
+<p>This Agreement shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions. You agree to submit to the personal jurisdiction of the courts located in India for the purpose of litigating all such claims or disputes.</p>
+<h2>Changes to This Agreement</h2>
+<p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will provide at least 15 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+</section>
+
+{% endblock content %}
+
+{% block footernscripts  %}
+
+{% include "base_templates/footer.html" %}
+    <!-- Main theme script-->
+    <script src="{% static 'main/js/theme.min.js' %}"></script>
+
+{% endblock footernscripts  %}
+

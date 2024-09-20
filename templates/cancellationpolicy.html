@@ -1,0 +1,45 @@
+{% extends 'base_templates/base.html' %}
+
+{% block SEO %}
+    <meta charset="utf-8">
+    <title>Biz499 | Cancellation Policy</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="biz499 is a marketing agency that provides affordable, professional marketing services to small businesses. We offer a wide range of services including social media marketing, search engine optimization, and pay-per-click management. We are committed to helping our clients grow their businesses and reach their goals. Contact us today to learn more about how we can help you grow your business.">
+    <meta name="keywords" content="marketing, sales, app develpment, web development, digital marketingbootstrap, business, creative agency, portfolio,biz499, digital marketing agency in surat">
+    <meta name="author" content="Biz499">
+{% endblock SEO %}
+
+{% block vendor_style %}
+{% load static %}
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/simplebar/dist/simplebar.min.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/lightgallery.js/dist/css/lightgallery.min.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/tiny-slider/dist/tiny-slider.css' %}"/>
+{% endblock vendor_style %}
+{% block content %}
+<section class="p-4">
+    <h1>Cancellation Policy</h1>
+	<p>Biz499 Marketing Solutions ("us", "we", or "our") provides digital marketing services to clients like you. We understand that there may be times when you need to cancel a project that you have already scheduled with us. Our cancellation policy is as follows:</p>
+	<ul>
+		<li>If you cancel your project more than 48 hours before it is scheduled to begin, you will be refunded in full.</li>
+		<li>If you cancel your project less than 48 hours before it is scheduled to begin, you will be charged a 50% cancellation fee.</li>
+		<li>If you cancel your project after it has already begun, you will be charged the full amount of the project.</li>
+	</ul>
+	<p>We understand that unforeseen circumstances may arise and we will work with you to reschedule your project whenever possible. If you have any questions about our cancellation policy, please feel free to contact us.</p>
+	<h2>Contact Us</h2>
+	<p>If you have any questions about our cancellation policy, please contact us at:</p>
+	<p>Name: Biz499 Marketing Solutions</p>
+	<p>Email: hello@biz499.com</p>
+	<p>Phone: +91-9106312511</p>
+	<p>Address: FF 231, Happy Hallmark Shoppers, Vesu, Surat, India 395007</p>
+</section>
+
+{% endblock content %}
+{% block footernscripts  %}
+{% include "base_templates/footer.html" %}
+    <!-- Main theme script-->
+    <script src="{% static 'main/js/theme.min.js' %}"></script>
+
+{% endblock footernscripts  %}
+

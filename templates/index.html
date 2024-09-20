@@ -1,0 +1,686 @@
+{% extends 'base_templates/base.html' %}
+
+{% block SEO %}
+    <meta charset="utf-8">
+    <title> Biz499 for Content Marketing | Digital Marketing | Website & App Development | Sales</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="biz499 is a marketing agency that provides affordable, professional marketing services to small businesses. We offer a wide range of services including social media marketing, search engine optimization, and pay-per-click management. We are committed to helping our clients grow their businesses and reach their goals. Contact us today to learn more about how we can help you grow your business.">
+    <meta name="keywords" content="marketing, sales, app develpment, web development, digital marketingbootstrap, business, creative agency, portfolio,biz499, digital marketing agency in surat">
+    <meta name="author" content="Biz499">
+{% endblock SEO %}
+
+{% block vendor_style %}
+{% load static %}
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/lightgallery.js/dist/css/lightgallery.min.css' %}">
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/tiny-slider/dist/tiny-slider.css' %}">
+    <!-- Custom Theme Styles + Bootstrap-->
+    <!-- <link rel="stylesheet" media="screen" href="{% static 'main/creative-agency/custom.css' %}"> -->
+{% endblock vendor_style %}
+
+
+{% block content %}
+{% for message in messages  %}            
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  <span class="fw-bold">{{ message.tags|capfirst}} Alert:</span> {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %} 
+  
+  
+      <!-- Hero-->
+      <section class="jarallax d-flex align-items-stretch min-vh-100 bg-dark overflow-hidden pt-5" data-jarallax data-speed="0.5">
+        
+        <div class="jarallax-img" style="background-image: url(static/img/creative-agency/home/hero-bg.webp);"></div>
+        <div class="container d-flex flex-column justify-content-around pt-5 pt-sm-4 pb-5">
+          <div class="row mt-md-5 pt-sm-5">
+            <div class="col-lg-4 col-md-5 order-md-1 order-2 text-md-start text-center">
+              <div class="mt-4 mb-4">
+                <a href="https://www.youtube.com/watch?v=nN-dxgjq-uo&ab_channel=biz499" class="btn-video me-3" data-gallery-video data-sub-html="<h6 class='fs-sm text-light'>Agency Showreel</h6>"></a>
+                <span class="fs-sm fw-bold text-light">Play Showreel</span>
+              </div>
+              <h1 class="mb-lg-1 mb-1 pb-2 display-1 text-light">Marketing</h1> <h1><span class="text-primary">Websites & Apps</span></h1>
+              <a href="#portfolio" class="mb-lg-0 mb-5 btn btn-lg btn-primary rounded-pill" data-scroll>View showcase</a>
+            </div>
+            <div class="col-lg-8 col-md-7 order-md-2 order-1 d-none d-md-block">
+
+
+<!--  
+<div class="customise end-0 me-5 mx-auto d-none d-lg-block d-flex flex-column align-items-center mb-md-5 mb-4 pb-2" style="max-width: 495px; z-index: 9;">
+    <div class="box h-100 w-100">
+        <div class="square" style="--i:0"></div>
+        <div class="square" style="--i:1"></div>
+        <div class="square" style="--i:2"></div>
+        <div class="square" style="--i:3"></div>
+        <div class="square" style="--i:4"></div>
+        <div class="container_glass">
+            <div class="form_inner form-group">
+                <h2 class="text-sm">Contact Us</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="inputBx">
+                        <label for="" class="full_name"></label>
+                        <input name="full_name" type="text" class="form-control form-control-lg" id="full_name" placeholder="Your full name" required>
+                        <div class="invalid-feedback">Please enter a valid name.</div>
+                    </div>
+                    <div class="inputBx">
+                        <input name="contact_number" type="tel" class="form-control" id="phone" required>
+                    </div>
+                    <div class="inputBx">
+                        <textarea class="form-control" name="message" id="message" placeholder="Please tell us about your requirements.."></textarea>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+
+                  <div class="parallax mb-md-0 mb-4">
+                    <div class="parallax-layer" data-depth="-0.09" style="z-index: 3;">
+                      <img src="{% static 'img/creative-agency/home/hero-image/01.webp' %}" alt="Layer">
+                    </div>
+                    <div class="parallax-layer" data-depth="-0.35" style="z-index: 4;">
+                      <img src="{% static 'img/creative-agency/home/hero-image/02.png' %}" alt="Layer">
+                    </div>
+                    <div class="parallax-layer" data-depth="-0.25" style="z-index: 2;">
+                      <img src="{% static 'img/creative-agency/home/hero-image/03.png' %}" alt="Layer">
+                    </div>
+                    <div class="parallax-layer" data-depth="-0.15" style="z-index: 1;">
+                      <img src="{% static 'img/creative-agency/home/hero-image/04.png' %}" alt="Layer">
+                    </div>
+                  </div>
+
+
+            </div>
+          </div>
+          <div class="row d-md-flex d-none align-items-center mt-lg-n5">
+            <div class="col-4">
+              <ul class="ps-4 list-unstyled border-start border-primary fw-bold text-muted text-uppercase lead">
+                <li>SEO / SEM</li>
+                <li>MOBILE / WEB-TECH </li>
+                <li>BRANDING / SMM / SMO</li>
+                <li>SALES</li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <a href="#mission" data-scroll class="d-flex align-items-center justify-content-center fs-sm fw-bold text-light text-decoration-none">
+                <i class="ci-arrow-down h4 me-2 mb-0 fw-normal text-light"></i>
+                Scroll down
+              </a>
+            </div>
+            <div class="col-4">
+              <div class="text-end">
+                <span class="ms-auto fw-bold text-light">
+                  12+ <br>
+                  awards
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Mission -->
+      <section id="mission" class="container py-lg-6 py-5 my-3 mt-lg-1 mb-sm-5">
+        <h3 class="h6 mb-3 pb-1 text-uppercase">What we do</h3>
+        <div class="row">
+          <div class="col-lg-7 col-md-6">
+            <p class="h3 mb-md-0 mb-3 pb-md-0 pb-1 line-height-base">We are a Marketing and Sales firm with wide range of solutions. In order to facilitate meaningful engagements with audiences, companies, goods, and purposes, we produce original ideas, purposeful content, through distinctive visual languages.</p>
+          </div>
+          <div class="col-lg-5 col-md-6 overflow-hidden">
+            <div class="d-flex justify-content-md-end flex-sm-nowrap flex-wrap mx-n4">
+              <div class="mb-sm-0 mb-4 px-4">
+                <span class="d-inline-block pb-1 fs-sm text-dark text-nowrap">Highlighted in</span>
+                <img class="d-block mt-md-3 mt-2 lazyload" data-src="{% static '/img/creative-agency/logo/forbes.svg' %}" alt="Brand logo">
+              </div>
+              <div class="mb-sm-0 mb-4 px-4">
+                <span class="d-inline-block pb-1 fs-sm text-dark text-nowrap">Top rated agency</span>
+                <img class="d-block mt-md-3 mt-2 lazyload" data-src="{% static '/img/creative-agency/logo/upwork.svg' %}" alt="Brand logo">
+              </div>
+              <div class="mb-sm-0 mb-4 px-4">
+                <span class="d-inline-block pb-1 fs-sm text-dark text-nowrap">5 stars only</span>
+                <img class="d-block mt-md-3 mt-2 lazyload" data-src="{% static '/img/creative-agency/logo/clutch.svg' %}" alt="Brand logo">
+              </div>
+            </div>
+          </div>
+        </div>  
+      </section>
+
+
+      <!-- Approach -->
+      <section class="pt-lg-3 pb-4">
+        <div class="container">
+          <h3 class="h6 mb-2 text-uppercase">Our approach</h3>
+          <h2 class="h1 mb-lg-5 mb-4">That’s how we do it</h2>
+        </div>
+
+        <!-- Carousel -->
+        <div class="container px-0">
+          <div class="tns-carousel-wrapper tns-nav-outside mt-n4 ms-lg-n5">
+            <div class="tns-carousel-inner pt-4 ps-lg-5" data-carousel-options='{
+              "loop": false,
+              "controls": false,
+              "responsive": {
+                "0": {
+                  "items": 1
+                },
+                "576": {
+                  "items": 2
+                },
+                "768": {
+                  "items": 3
+                },
+                "992": {
+                  "items": 4
+                }
+              }
+            }'>
+
+              <!-- Horizontal step item -->
+              <div class="step pt-2 px-3">
+                <div class="step-head mb-3">
+                  <span class="step-indicator">01</span>
+                  <span class="step-line"></span>
+                </div>
+                <div class="step-body">
+                  <h3 class="h5 mb-2">Learning about your business</h3>
+                  <p class="mb-0 text-muted">We incorporate your ideas with our own to create in-depth research and analysis of the market for your good or service.</p>
+                </div>
+              </div>
+
+              <!-- Horizontal step item -->
+              <div class="step pt-2 px-3">
+                <div class="step-head mb-3">
+                  <span class="step-indicator">02</span>
+                  <span class="step-line"></span>
+                </div>
+                <div class="step-body">
+                  <h3 class="h5 mb-2">We offer an individual strategy</h3>
+                  <p class="mb-0 text-muted">We offer a plan and a strategy based on our research to assist you in making a decision to strengthen your brand.</p>
+                </div>
+              </div>
+
+              <!-- Horizontal step item -->
+              <div class="step pt-2 px-3">
+                <div class="step-head mb-3">
+                  <span class="step-indicator">03</span>
+                  <span class="step-line"></span>
+                </div>
+                <div class="step-body">
+                  <h3 class="h5 mb-2">Launch entire package of tools</h3>
+                  <p class="mb-0 text-muted">For your company, we create content, design, code, provide leads, and increase revenue.</p>
+                </div>
+              </div>
+
+              <!-- Horizontal step item -->
+              <div class="step pt-2 px-3">
+                <div class="step-head mb-3">
+                  <span class="step-indicator">04</span>
+                </div>
+                <div class="step-body">
+                  <h3 class="h5 mb-2">Analyze each click</h3>
+                  <p class="mb-0 text-muted">On the application of the plan and the outcomes produced, we deliver thorough documentation.</p>
+                </div>
+              </div>
+
+              <div class="step pt-2 px-3">
+                <div class="step-head mb-3">
+                  <span class="step-indicator">05 </span>
+                </div>
+                <div class="step-body">
+                  <h3 class="h5 mb-2">We regularly improve efficiency</h3>
+                  <p class="mb-0 text-muted">Based on thr results produced, we make changes & improve.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Services -->
+      <section class="container py-lg-6 mb-md-3 mb-lg-0 py-5">
+        <h3 class="h6 mb-2 text-uppercase">Capabilities</h3>
+        <h2 class="h1 mb-lg-4 mb-2 pb-3">Our services</h2>
+        <div class="row align-items-center">
+          <div class="col-md-5 order-md-1 order-2">
+
+            <!-- Accordion -->
+            <div class="accordion" id="accordionServices">
+
+            {% for item in home_services %}
+              <!-- Item -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="servicesHeading-3">
+                  <button class="accordion-button border-0 collapsed" type="button" data-bs-toggle="collapse" data-binded-content="#services{{forloop.counter}}" data-bs-target="#servicesCollapse-{{forloop.counter}}" aria-expanded="false" aria-controls="servicesCollapse-3">{{item.title}}</button>
+                </h3>
+                <div class="accordion-collapse border-0 collapse" id="servicesCollapse-{{forloop.counter}}" aria-labelledby="servicesHeading-3" data-bs-parent="#accordionServices">
+                  <div class="accordion-body">{{item.description}}</div>
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-7 order-md-2 order-1 ms-auto">
+
+          <!-- Images binded to accordion -->
+          <div class="binded-content mb-4">
+              {% for item_image in home_services %}
+              <div id="services{{forloop.counter}}" class="binded-item {% if forloop.first %}active{% endif %}">
+                <img class="d-block lazyload" data-src="{{item_image.image.url}}" alt="{{item_image.title}}">
+              </div>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Portfolio: Featured projects -->
+      <section id="portfolio" class="bg-secondary py-lg-6 py-5">
+        <div class="container py-3 py-lg-0">
+          <h3 class="h6 mb-2 text-uppercase">Enjoy our latest projects</h3>
+          <div class="mb-lg-5 mb-4 d-flex justify-content-between">
+            <h2 class="h1 mb-0">Selected work</h2>
+            <div class="tns-custom-controls tns-controls-inverse mb-md-n4" id="tns-portfolio-controls" tabindex="0">
+              <button type="button" data-controls="prev" tabindex="-1">
+                <i class="ci-arrow-left"></i>
+              </button>
+              <button type="button" data-controls="next" tabindex="-1">
+                <i class="ci-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="container px-0">
+
+          <!-- Carousel  -->
+          <div class="tns-carousel-wrapper mt-n2 mb-lg-5 mb-4">
+            <div class="tns-carousel-inner" data-carousel-options='{
+              "nav": false,
+              "controlsContainer": "#tns-portfolio-controls",
+              "responsive": {
+                "0": {
+                  "items": 1
+                },
+                "576": {
+                  "items": 2
+                },
+                "768": {
+                  "items": 3
+                }
+              }
+            }'>
+            {% for obj in selected_work_list %}
+              <div class="rounded">
+                <a class="portfolio-card-scale text-decoration-none mt-3 mx-3" href="{{obj.get_absolute_url}}">
+                  <div class="portfolio-card-img">
+                    <img class="lazyload" data-src="{{obj.photo_1.url}}" alt="Card image">
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">{{obj.title}}</h3>
+                    {% for cat in obj.project_category.all %}
+                    <span class="fs-sm text-muted">
+                      {{cat}}
+                    </span>
+                    {% endfor %}
+                  </div>
+                </a>
+              </div>
+              {% endfor %}
+
+
+            </div>
+          </div>
+          <div class="d-flex justify-content-center align-items-center flex-md-row flex-column px-3">
+            <h3 class="mb-md-0">Fallen in love with our works?</h3>
+            <a href="/portfolio/" class="ms-md-4 btn btn-lg btn-primary rounded-pill">View portfolio</a>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Brands -->
+      <section class="container mt-md-4 py-lg-6 pt-5 pb-sm-5 pb-4 px-0">
+        <div class="tns-carousel-wrapper tns-nav-outside">
+          <div class="tns-carousel-inner" data-carousel-options='{
+            "nav": false,
+            "controls": false,
+            "autoplay": true,
+            "autoplayTimeout": 1500,
+            "responsive": {
+              "0": {
+                "items": 2
+              },
+              "576": {
+                "items": 3
+              },
+              "768": {
+                "items": 4
+              },
+              "992": {
+                "items": 5
+              },
+              "1200": {
+                "items": 6
+              }
+            }
+          }'>
+          {% for company in home_logos %}
+            <div class="px-3 text-center">
+              <a href="#" class="swap-image">
+                <img src="{{company.logo.url}}" class="swap-to" width="120" alt="{{company.title}} logo hover">
+                <img src="{{company.logo_grey.url}}" class="swap-from" width="120" alt="{{company.title}} logo">
+              </a>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Testimonials -->
+      <section class="container pb-5 pb-lg-4">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="h6 mb-2 text-uppercase">Testimonials</h3>
+            <h2 class="h1 mb-lg-5 mb-4 pb-2">What they say about us</h2>
+
+            <!-- Carousel custom controls -->
+            <div class="tns-custom-controls tns-controls-inverse d-md-flex d-none mb-n5 mx-0" id="tns-custom-controls" tabindex="0">
+              <button class="mb-n2" type="button" data-controls="prev" tabindex="-1">
+                <i class="ci-arrow-left"></i>
+              </button>
+              <button class="mb-n2" type="button" data-controls="next" tabindex="-1">
+                <i class="ci-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Carousel -->
+            <div class="tns-carousel-wrapper tns-nav-outside">
+              <div class="tns-carousel-inner" data-carousel-options='{
+                "gutter": 15,
+                "controlsContainer": "#tns-custom-controls",
+                "autoHeight": true,
+                "responsive": {
+                  "0": {
+                    "nav": true
+                  },
+                  "768": {
+                    "nav": false
+                  }
+                }
+              }'>
+              {% for obj in full_work_list %}
+                <!-- Testimonial -->
+                <blockquote>
+                  <img class="mb-4 rounded-circle" src="{{obj.user_profile_pic.url}}" width="72" alt="Author">
+                  <p>{{obj.user_testimonial}}</p>
+                  <footer>
+                    <h3 class="h6 mb-0">{{obj.user_name}}</h3>
+                    <span class="fs-sm text-muted">{{obj.user_position}}, {{obj.user_company}}</span>
+                  </footer>
+                </blockquote>
+              {% endfor %}
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Image -->
+          <div class="col-lg-5 col-md-6 d-md-block d-none ms-lg-auto">
+            <img class="mb-lg-n6 rounded lazyload" data-src="{% static 'img/creative-agency/home/testimonials/team.webp' %}" alt="Testimonials">
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Blog (Recent posts) -->
+      <section class="bg-secondary pt-lg-6 py-5">
+        <div class="container pt-3 pt-lg-0">
+          <h3 class="h6 mb-2 text-uppercase">Our blog</h3>
+          <h2 class="h1 mb-lg-5 mb-4 pb-2 d-flex align-items-center justify-content-between">
+            Recent news
+            <a href="blog.html" class="btn btn-outline-primary rounded-pill">View blog</a>
+          </h2>
+          <div class="row">
+
+            <!-- Post card: image fade in -->
+            {% for blog in latest %}
+            <div class="col-lg-4 col-sm-6 mb-sm-grid-gutter mb-3">
+              <article class="image-fade card card-hover shadow" style="background-image: url({{blog.thumbnail_1620_720.url}});">
+                <div class="image-inner d-flex flex-column justify-content-between h-100 p-3">
+                  <div class="card-header border-0 pb-0">
+                    <ul class="nav nav-muted mb-2 pb-1">
+                      {% for cat in cat.categories.all %}
+                      <li class="nav-item me-2">
+                        <a class="inner-text nav-link d-inline-block me-2 p-0 fs-sm fw-normal" href="{{blog.get_absolute_url}}">
+                          {{cat}}
+                        </a>
+                        <span class="inner-text text-border px-1">|</span>
+                      </li>
+                      {% endfor %}
+                      <li class="nav-item me-2">
+                        <a class="inner-text nav-link d-inline-block me-2 p-0 fs-sm fw-normal" href="{{blog.get_absolute_url}}">
+                          {{blog.publish_date}}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-body pt-0" style="min-height: 15rem;">
+                    <h3 class="h5 mb-2 pb-1">
+                      <a class="inner-text nav-link" href="{{blog.get_absolute_url}}">
+                        {{blog.title}}
+                      </a>
+                    </h3>
+                  </div>
+                  <div class="card-footer border-0">
+                    <div class="h6 mb-0 text-end">
+                      <a class="inner-text nav-link py-3" href="{{blog.get_absolute_url}}">
+                        Read more
+                      </a>
+                      <i class="inner-text ci-arrow-right align-middle h5 mb-0 ms-2 card-text"></i>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Achievements -->
+      <section class="container pt-lg-6 py-5 mt-4 mt-lg-3">
+        <h3 class="h6 mb-2 text-uppercase">Our achievements</h3>
+        <div class="row">
+          <div class="col-xl-4 col-lg-5">
+            <h2 class="h1 mb-lg-5 mb-4">The awards won by our studio</h2>
+          </div>
+          <div class="col-lg-7 mt-2 d-flex flex-sm-row flex-column align-items-start justify-content-sm-between flex-lg-nowrap flex-wrap ms-auto">
+            <div class="d-flex flex-sm-column justify-content-center mb-lg-0 mb-3 px-3">
+              <a href="#" class="swap-image me-sm-0 me-3 mb-3">
+                <img src="{% static 'img/creative-agency/logo/webby.svg' %}" class="swap-to" width="60" alt="Brand logo hover">
+                <img src="{% static '/img/creative-agency/logo/webby-g.svg' %}" class="swap-from" width="60" alt="Brand logo">
+              </a>
+              <span class="d-block pt-1 fs-sm text-dark text-nowrap">4x mobile of the day</span>
+            </div>
+            <div class="d-flex flex-sm-column justify-content-center mb-lg-0 mb-3 px-3">
+              <a href="#" class="swap-image me-sm-0 me-3 mb-3">
+                <img src="{% static '/img/creative-agency/logo/cssda.svg' %}" class="swap-to" width="60" alt="Brand logo hover">
+                <img src="{% static '/img/creative-agency/logo/cssda-g.svg' %}" class="swap-from" width="60" alt="Brand logo">
+              </a>
+              <span class="d-block pt-1 fs-sm text-dark text-nowrap">1x Kudos</span>
+            </div>
+            <div class="d-flex flex-sm-column justify-content-center mb-lg-0 mb-3 px-3">
+              <a href="#" class="swap-image me-sm-0 me-3 mb-3">
+                <img src="{% static '/img/creative-agency/logo/awwwards.svg' %}" class="swap-to" width="60" alt="Brand logo hover">
+                <img src="{% static '/img/creative-agency/logo/awwwards-g.svg' %}" class="swap-from" width="60" alt="Brand logo">
+              </a>
+              <span class="d-block pt-1 fs-sm text-dark text-nowrap">3x website of the day</span>
+            </div>
+            <div class="d-flex flex-sm-column justify-content-center mb-lg-0 mb-3 px-3">
+              <a href="#" class="swap-image me-sm-0 me-3 mb-3">
+                <img src="{% static '/img/creative-agency/logo/fwa.svg' %}" class="swap-to" width="60" alt="Brand logo hover">
+                <img src="{% static 'img/creative-agency/logo/fwa-g.svg' %}" class="swap-from" width="60" alt="Brand logo">
+              </a>
+              <span class="d-block pt-1 fs-sm text-dark text-nowrap">2x best website</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="container mt-md-4 pt-lg-6 pt-5 pb-4" id="pricingsection">
+        <h2 class="h1 mb-md-5 pb-2 text-center">Flexible pricing plans</h2>
+
+          <!-- Vertical pricing plan alt -->
+          <div class="tns-carousel-wrapper tns-nav-outside">
+            <div class="tns-carousel-inner" data-carousel-options='{
+              "gutter": 30,
+              "loop": false,
+              "controls": false,
+              "responsive": {
+                "0": {
+                  "items": 1,
+                  "nav": true
+                },
+                "576": {
+                  "items": 2
+                },
+                "992": {
+                  "items": 3,
+                  "nav": false
+                }
+              }
+            }'>
+          {% for card in pricecard %}
+          <div class="col-lg-4 col-sm-6 mb-grid-gutter">
+          <div class="card card-hover shadow">
+            <div class="card-img-top text-center pt-4">
+              <h3 class="mt-3 mb-2">{{card.title |capfirst }}</h3>
+            </div>
+            <div class="card-body pt-0">
+              <div class="display-4 d-flex justify-content-center mb-3 py-2 px-4 text-primary">
+                ₹{{card.price}}
+                <sup class="lead fw-bold mt-4 ms-2">/day</sup>
+              </div>
+              <hr class="hr-gradient mx-n4 mb-4">
+              <ul class="list-unstyled d-table mx-auto mb-0 pb-2">
+                {% for feature in card.features_included_list %}
+                <li class="d-flex align-items-center mb-2">
+                  <i class="ci-checkmark text-primary me-2"></i>
+                  <span>{{feature}}</span>
+                </li>
+                {% endfor %}
+                {% for feature_not in card.features_excluded_list %}
+                <li class="d-flex align-items-center mb-2 opacity-90">
+                  <i class="ci-cross text-muted me-2"></i>
+                  <span class="text-muted">{{feature_not}}</span>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="card-footer pt-0 border-0 text-center">
+              <a class="btn btn-outline-primary mb-4" href="/{{card.title}}">Choose plan</a>
+            </div>
+          </div>
+          </div>
+          {% endfor %}
+          </div>
+        </div>
+</section>
+
+
+      <!-- Team -->
+      <section class="container pt-lg-6 pt-sm-5 pb-lg-5 pb-4">
+        <div class="row">
+          <div class="col-lg-4 col-sm-5 order-sm-1 order-2">
+
+            <!-- Images binded to accordion -->
+            <div class="binded-content mb-4">
+              {% for person in team_members %}
+              <div id="team{{forloop.counter}}" class="binded-item {% if forloop.first %}active{% endif %}">
+                <img class="rounded lazyload" data-src="{{person.pic.url}}" alt="{{person.name}}">
+              </div>
+              {% endfor %}
+
+            </div>
+            <a href="/about/" class="d-lg-none d-inline-block btn-block btn btn-outline-primary rounded-pill">More about us</a>
+          </div>
+          <div class="col-sm-7 order-sm-2 order-1 mb-sm-0 mb-4 ms-auto">
+            <div class="d-flex justify-content-between">
+              <div class="me-3">
+                <h3 class="h6 mb-2 text-uppercase">Creative people are all here</h3>
+                <h2 class="h1 mb-lg-5 mb-3 pb-2">Meet our team</h2>
+              </div>
+              <div class="d-lg-block d-none">
+                <a href="/about/" class="btn btn-outline-primary rounded-pill">More about us</a>
+              </div>
+            </div>
+
+            <!-- Accordion -->
+            <div class="accordion" id="accordionTeam">
+
+              {% for des in team_members %}
+              <!-- Item -->
+              <div class="accordion-item">
+                <h3 class="accordion-header h5" id="teamHeading-{{forloop.counter}}">
+                  <button class="accordion-button py-2 border-0 {% if not forloop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-binded-content="#team{{forloop.counter}}" data-bs-target="#teamCollapse-{{forloop.counter}}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="teamCollapse-{{forloop.counter}}">{{des.name}}</button>
+                </h3>
+                <div class="accordion-collapse border-0 collapse {% if forloop.first %}show{% endif %}" id="teamCollapse-{{forloop.counter}}" aria-labelledby="teamHeading-{{forloop.counter}}" data-bs-parent="#accordionTeam">
+                  <div class="accordion-body">
+                    <h4 class="h6 mb-2 pb-1 fw-normal text-muted">{{des.position}}</h4>
+                    {{des.description}}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Contact links -->
+
+{% include "base_templates/contact_list.html" %}
+
+{% endblock content %}
+    
+
+{% block footernscripts  %}
+
+{% include "base_templates/footer.html" %}
+
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="{% static '/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static '/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js' %}"></script>
+    <script src="{% static '/vendor/jarallax/dist/jarallax.min.js' %}"></script>
+    <script src="{% static '/vendor/lightgallery.js/dist/js/lightgallery.min.js' %}"></script>
+    <script src="{% static '/vendor/lg-video.js/dist/lg-video.min.js' %}"></script>
+    <script src="{% static '/vendor/parallax-js/dist/parallax.min.js' %}"></script>
+    <script src="{% static '/vendor/tiny-slider/dist/min/tiny-slider.js' %}"></script>
+
+    <!-- Main theme script-->
+    <script src="{% static 'main/js/theme.min.js' %}"></script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/23305579.js"></script> -->
+    <!-- End of HubSpot Embed Code -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+{% endblock footernscripts  %}

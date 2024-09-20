@@ -1,0 +1,180 @@
+{% extends 'base_templates/base.html' %}
+
+{% block SEO %}
+    <meta charset="utf-8">
+    <title>Biz499 | Marketing Agency | Portfolio</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Biz499 - Marketing, Websites & Apps">
+    <meta name="keywords" content="best marketing agency in india, website development, creative marketing agency, affordable website, start your business, boost my architecture firm, promote my business , website for my business, best website agency, affordable website development, website developer, fast websites, dynamic websites, creative websites">
+    <meta name="author" content="Biz499 Marketing Agency">
+
+    {% endblock SEO %}
+
+    {% block vendor_style %}
+    {% load static %}
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/simplebar/dist/simplebar.min.css' %}">
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/tiny-slider/dist/tiny-slider.css' %}">
+
+    {% endblock vendor_style %}
+
+    {% block content %}
+
+      <!-- Portfolio grid-->
+      <section class="py-lg-6 py-5 bg-secondary bg-position-top-start bg-repeat-0" style="background-image: url('{% static '/img/creative-agency/portfolio/page-bg.png' %}');">
+        <div class="container mt-5 py-3 pb-lg-0 pt-md-5 pt-lg-4">
+
+          <!-- Filterable grid container. IMPORTANT: it should wrap filters/sorters and target grid of items in order for plugin to work! -->
+          <div data-filter-grid>
+            <h3 class="h6 mb-2 text-uppercase">Our Work</h3>
+            <div class="row align-items-end mb-lg-5 mb-4">
+              <div class="col-lg">
+                <h2 class="h1 mb-lg-0 mb-md-3 mb-2">Portfolio</h2>
+              </div>
+              <div class="col-lg-9">
+                <div class="mb-lg-0 mb-4 pb-lg-0 pb-2" data-simplebar data-simplebar-auto-hide="false">
+
+                  <!-- Filter navs -->
+                  <ul class="nav flex-lg-wrap flex-nowrap justify-content-lg-end mx-lg-0 mx-n3 mt-1 text-nowrap">
+                    <li class="nav-item mb-0">
+                      <span class="nav-link active" data-filter="all">
+                        All
+                        <sup class="ms-1">{{portfolio_total}}</sup>
+                      </span>
+                    </li>
+                    {% for cat in port_category_count %}
+                    <li class="nav-item mb-0">
+                      <span class="nav-link" data-filter=".{{cat.filter_category__title}}">
+                        {{cat.filter_category__title|capfirst}}
+                        <sup class="ms-1">{{cat.filter_category__title__count}}</sup>
+                      </span>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Filterable grid of items -->
+            <div class="row">
+              {% for portfolio_item in portfolio_list %}
+
+                {% if forloop.counter|add:"4"|divisibleby:"5" %}
+                <div class="grid-item {{portfolio_item.filter_category.title}} col-md-8 pb-lg-2 mb-4">
+                <a class="portfolio-card-scale {% if portfolio_item.filter_category.title == 'video-production' %} portfolio-card-video {% endif %}" href="{{portfolio_item.get_absolute_url}}">
+                  <div class="portfolio-card-img">
+                    <img src="{{portfolio_item.project_hero_image.url}}" alt="Card image">
+                    {% if portfolio_item.filter_category.title == 'video-production' %}
+                    <span class="btn-video"></span>
+                    {% endif %}
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">{{portfolio_item.main_project_title}}</h3>
+                    <span class="fs-sm text-muted">{{portfolio_item.filter_category.title|capfirst }}</span>
+                  </div>
+                </a>
+                </div>
+                {% endif %}
+
+                {% if not forloop.counter|add:"4"|divisibleby:"5" %}
+              <div class="grid-item {{portfolio_item.filter_category.title}} col-md-4 col-sm-6 pb-lg-2 mb-4">
+                <a class="portfolio-card-scale {% if portfolio_item.filter_category.title == 'video-production' %} portfolio-card-video {% endif %}" href="{{portfolio_item.get_absolute_url}}">
+                  <div class="portfolio-card-img">
+                    <img src="{{portfolio_item.photo_1.url}}" alt="Card image">
+                    {% if portfolio_item.filter_category.title == 'video-production' %}
+                    <span class="btn-video"></span>
+                    {% endif %}
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">{{portfolio_item.main_project_title}}</h3>
+                    <span class="fs-sm text-muted">{{portfolio_item.filter_category.title}}</span>
+                  </div>
+                </a>
+              </div>
+                {% endif %}
+
+              {% endfor %}
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- Testimonials -->
+      <section class="container pt-lg-6 py-5">
+        <div class="row pt-3 pt-lg-0">
+          <div class="col-md-6">
+            <h3 class="h6 mb-2 text-uppercase">Testimonials</h3>
+            <h2 class="h1 mb-lg-5 mb-4 pb-2">What clients say about us</h2>
+
+            <!-- Carousel custom controls -->
+            <div class="tns-custom-controls tns-controls-inverse d-md-flex d-none mb-n5 mx-0" id="tns-custom-controls" tabindex="0">
+              <button class="mb-n2" type="button" data-controls="prev" tabindex="-1">
+                <i class="ci-arrow-left"></i>
+              </button>
+              <button class="mb-n2" type="button" data-controls="next" tabindex="-1">
+                <i class="ci-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Carousel -->
+            <div class="tns-carousel-wrapper tns-nav-outside">
+              <div class="tns-carousel-inner" data-carousel-options='{
+                "gutter": 15,
+                "controlsContainer": "#tns-custom-controls",
+                "autoHeight": true,
+                "responsive": {
+                  "0": {
+                    "nav": true
+                  },
+                  "768": {
+                    "nav": false
+                  }
+                }
+              }'>
+              {% for obj in portfolio_list %}
+                <!-- Carousel testimonial item -->
+                <blockquote>
+                  <img class="mb-4 rounded-circle" src="{{obj.user_profile_pic.url}}" width="72" alt="Author">
+                  <p>{{obj.user_testimonial}}</p>
+                  <footer>
+                    <h3 class="h6 mb-0">{{obj.user_name}}</h3>
+                    <span class="fs-sm text-muted">{{obj.user_position}}, {{obj.user_company}}</span>
+                  </footer>
+                </blockquote>
+                {% endfor %}
+ 
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6 d-md-block d-none ms-lg-auto">
+            <img class="rounded" src="{% static 'img/creative-agency/home/testimonials/03.jpg' %}" alt="Testimonials">
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Contact links -->
+{% include "base_templates/contact_list.html" %}
+
+    {% endblock content %}
+
+
+    {% block footernscripts  %}
+    <!-- Footer -->
+    {% include "base_templates/footer.html" %}
+
+    
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js' %}"></script>
+    <script src="{% static 'vendor/simplebar/dist/simplebar.min.js' %}"></script>
+    <script src="{% static 'vendor/tiny-slider/dist/min/tiny-slider.js' %}"></script>
+    <script src="{% static 'vendor/mixitup/dist/mixitup.min.js' %}"></script>
+
+    <!-- Main theme script-->
+    <script src="{% static 'main/js/theme.min.js' %}"></script>
+{% endblock footernscripts  %}

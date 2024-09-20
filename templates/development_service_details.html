@@ -1,0 +1,702 @@
+{% extends 'base_templates/base.html' %}
+{% block SEO %}
+    <meta charset="utf-8">
+    <title>Biz499 | Website and App Development Services</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Starting @ just Rs. 4990, our service is one of the most affordable options available for those looking to create a professional website.">
+    <meta name="keywords" content="Website Development, web-app development, contruction agency webapp, websites in india, websites, website agency in surat, education websites, portfolio websites, contruction agency website, travel agency website, cab booking web-app, hospital web-app  ">
+    <meta name="author" content="Biz499 | Ads, Design & Development">
+{% endblock SEO %}
+
+{% block vendor_style %}
+{% load static %}
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/simplebar/dist/simplebar.min.css' %}"/>
+{% endblock vendor_style %}
+
+{% block content %}
+      <!-- Page title -->
+      <section class="container d-md-flex align-items-center justify-content-between py-3 py-md-4 mb-3">
+        <h1 class="mb-2 mb-md-0">Development Services</h1>
+      </section>
+
+            <!-- Single product -->
+            <section class="container mb-lg-3">
+
+              <!-- Nav tabs -->
+              <div data-simplebar data-simplebar-auto-hide="false">
+                <ul class="nav nav-tabs flex-nowrap text-nowrap" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#singlepageinfo" data-bs-toggle="tab" data-bs-target="#singlepageinfo" role="tab" aria-controls="singlepageinfo" aria-selected="true">Single Page Website</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Blggoing_Web_App" data-bs-toggle="tab" data-bs-target="#Blggoing_Web_App" role="tab" aria-controls="Blggoing_Web_App" aria-selected="false">Blog Web-App</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#E_Commerce_Web_App" data-bs-toggle="tab" data-bs-target="#E_Commerce_Web_App" role="tab" aria-controls="E_Commerce_Web_App" aria-selected="false">E-Commerce Web-App</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#E_Commerce_Mobile_App" data-bs-toggle="tab" data-bs-target="#E_Commerce_Mobile_App" role="tab" aria-controls="E_Commerce_Mobile_App" aria-selected="false">E-Commerce Mobile-App</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#Custom_Mobile_Application" class="nav-link" data-bs-toggle="tab" role="tab">
+                      Custom Mobile Application
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Custom_Web_App" data-bs-toggle="tab" data-bs-target="#Custom_Web_App" role="tab" aria-controls="Custom_Web_App" aria-selected="false">Custom Web-Application</a>
+                  </li>
+                </ul>
+                <div class="scroll-indicator d-sm-none">
+                  <img src="https://www.biz499.com/media/hand_icon.gif" alt="Scroll Indicator GIF"> 
+                </div>
+              
+                <style>
+                  .scroll-indicator {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 1;
+                  }
+                  
+                  .scroll-indicator img {
+                    display: block;
+                    width: 50px; /* adjust to the size of your GIF */
+                    height: auto;
+                    margin: 0 auto;
+                  }
+                </style>
+              
+              <script>
+                var scrollIndicator = document.querySelector('.scroll-indicator');
+                var initialTouchX = null;
+              
+                document.addEventListener('touchstart', function(event) {
+                  if (event.touches.length === 1) {
+                    initialTouchX = event.touches[0].clientX;
+                  }
+                });
+              
+                document.addEventListener('touchmove', function(event) {
+                  if (initialTouchX !== null) {
+                    var currentTouchX = event.touches[0].clientX;
+                    var diffX = initialTouchX - currentTouchX;
+                    if (Math.abs(diffX) > 10) {
+                      // Only hide scroll indicator if touch movement is horizontal
+                      if (scrollIndicator) {
+                        scrollIndicator.style.display = 'none';
+                      }
+                    }
+                    initialTouchX = null;
+                  }
+                });
+              </script>
+              </div>
+      
+          <div class="tab-content border-top pt-4">
+
+          <!-- Single_Page_Website details -->
+          <div class="tab-pane active fade pt-3 show" id="singlepageinfo" role="tabpanel">
+            <div class="row">
+              <div class="bg-secondary position-sticky col-lg-8 ps-lg-5 pe-lg-6">
+                <h3 class="h5 mb-3">Single Page Website</h3>
+                <p>Unlock Your Online Potential with our Single Page Website Service</p>
+                <ul class="ps-3">
+                  <li>Admin panel </li>
+                  <li>20 hours of development time.</li>
+                  <li>Working contact forms.</li>
+                  <li>Responsive user experience across all devices.</li>
+                  <li>SSL certificate & Payment integration</li>
+                </ul>
+                
+                <hr class="my-4">
+                <h3 class="h5 mb-3">Customer Care</h3>
+                <ul class="ps-0">
+                  <a href="tel:+919571670706">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-iphone"></i>
+                    <div class="ps-1">
+                      +91 9571670706
+                    </div>
+                  </li>
+                  </a>
+                  <a href="https://wa.me/+919106312511/">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-whatsapp"></i>
+                    <div class="ps-1">
+                      +91 9106312511
+                    </div>
+                  </li>
+                </a>
+
+                </ul>
+
+                <hr class="my-4">
+<form method="POST" class="row needs-validation" novalidate>
+  {% csrf_token %}
+                <div class="row pb-3">
+                   <div class="border-bottom">
+              <h2 class="h4 mb-4">Payment &amp; User details  </h2>
+            </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="first_name" class="form-label-lg">First Name</label>
+                  <input name="first_name" type="text" class="form-control form-control-lg" id="first_name" placeholder="Your first name" required>
+                  <div class="invalid-feedback">First Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="last_name" class="form-label-lg">Last Name</label>
+                  <input name="last_name" type="text" class="form-control form-control-lg" id="last_name" placeholder="Your last name" required>
+                  <div class="invalid-feedback">Last Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="email_id_pay" class="form-label-lg">Email</label>
+                  <input name="email_id_pay" type="email" class="form-control form-control-lg" id="email_id_pay" placeholder="Your email address" required>
+                  <div class="invalid-feedback">Please fill a valid email.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="phone" class="form-label-lg">Phone</label>
+                  <input name="phone" type="text" class="form-control form-control-lg" id="phone" placeholder="Your phone number" pattern="[0-9]{10}" required>
+                  <div class="invalid-feedback">Please fill a valid phone number.</div>
+                </div>
+                <input type="hidden" name="amount" id="amount" value="9" >
+                <input type="hidden" name="purpose" id="purpose" value="Single Page Website" >
+                </div>
+              </div>
+              <aside class="col-lg-4">
+                <div class="position-sticky top-0">
+                 
+
+              <div class="row">
+
+        
+                <div class="bg-secondary rounded mb-3">
+                  <div class="border-bottom">
+                    <h2 class="h4 mb-0">Order totals</h2>
+                  </div>
+                  <ul class="list-unstyled border-bottom mb-0 p-4">
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="fw-bold">Development Charges:</span>
+                      <span class="fw-bold">₹10000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Hosting costs (4 Months):</span>
+                      <span>₹0.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Discount:</span>
+                      <span>₹7000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <span>Estimated sales tax:</span>
+                      <span>&mdash;</span>
+                    </li>
+                  </ul>
+                  <div class="d-flex justify-content-between mt-3">
+                    <span class="h5 mb-0">Order total:</span>
+                    <span class="h5 mb-0">₹3000.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="ex-check-2" checked required>
+  <label class="form-check-label" for="ex-check-2">By proceeding you agree to our <a href="/termsandconditions/">Terms & Conditions </a> and  <a href="/privacypolicy/">Privacy Policy</a></label>
+</div>
+       
+              <button type="submit" class="btn btn-primary btn-lg d-block w-100">Complete order</button>
+
+            </div>
+            </aside>
+</form>            
+            </div>
+
+
+
+          </div>          
+        <!-- Single_Page_Website End -->
+
+
+          <!-- Blog Web-App details -->
+          <div class="tab-pane fade pt-3" id="Blggoing_Web_App" role="tabpanel">
+            <div class="row">
+              <div class="bg-secondary position-sticky col-lg-8 ps-lg-5 pe-lg-6">
+                <h3 class="h5 mb-3">Blog Web App</h3>
+                <p>Revolutionize Your Online Presence with Our Innovative Blog Web App Service</p>
+                <ul class="ps-3">
+                  <li>Admin panel </li>
+                  <li>30 hours of development time.</li>
+                  <li>Working contact forms.</li>
+                  <li>Blogging facility along with SEO options</li>
+                  <li>Responsive user experience across all devices.</li>
+                  <li>SSL certificate & Payment integration</li>
+                </ul>
+                
+                <hr class="my-4">
+                <h3 class="h5 mb-3">Customer Care</h3>
+                <ul class="ps-0">
+                  <a href="tel:+919571670706">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-iphone"></i>
+                    <div class="ps-1">
+                      +91 9571670706
+                    </div>
+                  </li>
+                  </a>
+                  <a href="https://wa.me/+919106312511/">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-whatsapp"></i>
+                    <div class="ps-1">
+                      +91 9106312511
+                    </div>
+                  </li>
+                </a>
+
+                </ul>
+
+                <hr class="my-4">
+<form method="POST" class="row needs-validation" novalidate>
+  {% csrf_token %}
+                <div class="row pb-3">
+                   <div class="border-bottom">
+              <h2 class="h4 mb-4">Payment &amp; User details  </h2>
+            </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="first_name" class="form-label-lg">First Name</label>
+                  <input name="first_name" type="text" class="form-control form-control-lg" id="first_name" placeholder="Your first name" required>
+                  <div class="invalid-feedback">First Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="last_name" class="form-label-lg">Last Name</label>
+                  <input name="last_name" type="text" class="form-control form-control-lg" id="last_name" placeholder="Your last name" required>
+                  <div class="invalid-feedback">Last Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="email_id_pay" class="form-label-lg">Email</label>
+                  <input name="email_id_pay" type="email" class="form-control form-control-lg" id="email_id_pay" placeholder="Your email address" required>
+                  <div class="invalid-feedback">Please fill a valid email.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="phone" class="form-label-lg">Phone</label>
+                  <input name="phone" type="text" class="form-control form-control-lg" id="phone" placeholder="Your phone number" required>
+                  <div class="invalid-feedback">Please fill a valid phone number.</div>
+                </div>
+                <input type="hidden" name="amount" id="amount" value="13000" >
+                <input type="hidden" name="purpose" id="purpose" value="Blog Web App" >
+                </div>
+              </div>
+              <aside class="col-lg-4">
+                <div class="position-sticky top-0">
+                 
+
+              <div class="row">
+
+        
+                <div class="bg-secondary rounded mb-3">
+                  <div class="border-bottom">
+                    <h2 class="h4 mb-0">Order totals</h2>
+                  </div>
+                  <ul class="list-unstyled border-bottom mb-0 p-4">
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="fw-bold">Development Charges:</span>
+                      <span class="fw-bold">₹15000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Hosting costs (4 Months):</span>
+                      <span>₹0.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Discount:</span>
+                      <span>₹2000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <span>Estimated sales tax:</span>
+                      <span>&mdash;</span>
+                    </li>
+                  </ul>
+                  <div class="d-flex justify-content-between mt-3">
+                    <span class="h5 mb-0">Order total:</span>
+                    <span class="h5 mb-0">₹13000.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="ex-check-2" checked required>
+  <label class="form-check-label" for="ex-check-2">By proceeding you agree to our <a href="/termsandconditions/">Terms & Conditions </a> and  <a href="/privacypolicy/">Privacy Policy</a></label>
+</div>
+        
+              <button type="submit" class="btn btn-primary btn-lg d-block w-100">Complete order</button>
+            </div>
+            </aside>
+</form>            
+            </div>
+
+
+
+          </div>          
+        <!-- Blog Web-App End -->
+
+
+
+          <!-- E_Commerce_Web_App details -->
+          <div class="tab-pane fade pt-3" id="E_Commerce_Web_App" role="tabpanel">
+            <div class="row">
+              <div class="bg-secondary position-sticky col-lg-8 ps-lg-5 pe-lg-6">
+                <h3 class="h5 mb-3">E-Commerce Web App</h3>
+                <p>Revolutionize Your Online Presence with Our E-Commerce Web App Service</p>
+                <ul class="ps-3">
+                  <li>Admin panel </li>
+                  <li>Product Uploading panel </li>
+                  <li>40 hours of development time.</li>
+                  <li>Working contact forms.</li>
+                  <li>Blogging facility along with SEO options</li>
+                  <li>Discount coupons and cart options.</li>
+                  <li>Responsive user experience across all devices.</li>
+                  <li>SSL certificate & Payment integration</li>
+                </ul>
+                
+                <hr class="my-4">
+                <h3 class="h5 mb-3">Customer Care</h3>
+                <ul class="ps-0">
+                  <a href="tel:+919571670706">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-iphone"></i>
+                    <div class="ps-1">
+                      +91 9571670706
+                    </div>
+                  </li>
+                  </a>
+                  <a href="https://wa.me/+919106312511/">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-whatsapp"></i>
+                    <div class="ps-1">
+                      +91 9106312511
+                    </div>
+                  </li>
+                </a>
+
+                </ul>
+
+                <hr class="my-4">
+<form method="POST" class="row needs-validation" novalidate>
+  {% csrf_token %}
+                <div class="row pb-3">
+                   <div class="border-bottom">
+              <h2 class="h4 mb-4">Payment &amp; User details  </h2>
+            </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="first_name" class="form-label-lg">First Name</label>
+                  <input name="first_name" type="text" class="form-control form-control-lg" id="first_name" placeholder="Your first name" required>
+                  <div class="invalid-feedback">First Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="last_name" class="form-label-lg">Last Name</label>
+                  <input name="last_name" type="text" class="form-control form-control-lg" id="last_name" placeholder="Your last name" required>
+                  <div class="invalid-feedback">Last Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="email_id_pay" class="form-label-lg">Email</label>
+                  <input name="email_id_pay" type="email" class="form-control form-control-lg" id="email_id_pay" placeholder="Your email address" required>
+                  <div class="invalid-feedback">Please fill a valid email.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="phone" class="form-label-lg">Phone</label>
+                  <input name="phone" type="text" class="form-control form-control-lg" id="phone" placeholder="Your phone number" required>
+                  <div class="invalid-feedback">Please fill a valid phone number.</div>
+                </div>
+                <input type="hidden" name="amount" id="amount" value="18000" >
+                <input type="hidden" name="purpose" id="purpose" value="E-Commerce Web App" >
+                </div>
+              </div>
+              <aside class="col-lg-4">
+                <div class="position-sticky top-0">
+                 
+
+              <div class="row">
+
+        
+                <div class="bg-secondary rounded mb-3">
+                  <div class="border-bottom">
+                    <h2 class="h4 mb-0">Order totals</h2>
+                  </div>
+                  <ul class="list-unstyled border-bottom mb-0 p-4">
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="fw-bold">Development Charges:</span>
+                      <span class="fw-bold">₹20000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Hosting costs (4 Months):</span>
+                      <span>₹0.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Discount:</span>
+                      <span>₹2000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <span>Estimated sales tax:</span>
+                      <span>&mdash;</span>
+                    </li>
+                  </ul>
+                  <div class="d-flex justify-content-between mt-3">
+                    <span class="h5 mb-0">Order total:</span>
+                    <span class="h5 mb-0">₹18000.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="ex-check-2" checked required>
+  <label class="form-check-label" for="ex-check-2">By proceeding you agree to our <a href="/termsandconditions/">Terms & Conditions </a> and  <a href="/privacypolicy/">Privacy Policy</a></label>
+</div>
+        
+              <button type="submit" class="btn btn-primary btn-lg d-block w-100">Complete order</button>
+            </div>
+            </aside>
+</form>            
+            </div>
+
+
+
+          </div>          
+        <!-- E_Commerce_Web_App End -->
+
+
+          <!-- E_Commerce_Mobile_App details -->
+          <div class="tab-pane fade pt-3" id="E_Commerce_Mobile_App" role="tabpanel">
+            <div class="row">
+              <div class="bg-secondary position-sticky col-lg-8 ps-lg-5 pe-lg-6">
+                <h3 class="h5 mb-3">Ecommerce Native Mobile Application</h3>
+                <p>Revolutionize Your Android & Iphone Presence with Our Innovative Ecommerce Mobile Application</p>
+                <ul class="ps-3">
+                  <li>Admin panel </li>
+                  <li>100 hours of development time.</li>
+                  <li>User Accounts.</li>
+                  <li>Cart & Wishlist.</li>
+                  <li>Android & Ios compatibility.</li>
+                  <li>Notifications & App alerts</li>
+                  <li>Product Uploading panel</li>
+                  <li>Payment integration</li>
+                  <li>Discount coupons and cart options.</li>
+                </ul>
+                
+                <hr class="my-4">
+                <h3 class="h5 mb-3">Customer Care</h3>
+                <ul class="ps-0">
+                  <a href="tel:+919571670706">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-iphone"></i>
+                    <div class="ps-1">
+                      +91 9571670706
+                    </div>
+                  </li>
+                  </a>
+                  <a href="https://wa.me/+919106312511/">
+                  <li class="d-flex align-items-start">
+                    <i class="navbar-tool-icon ci-whatsapp"></i>
+                    <div class="ps-1">
+                      +91 9106312511
+                    </div>
+                  </li>
+                </a>
+
+                </ul>
+
+                <hr class="my-4">
+<form method="POST" class="row needs-validation" novalidate>
+  {% csrf_token %}
+                <div class="row pb-3">
+                   <div class="border-bottom">
+              <h2 class="h4 mb-4">Payment &amp; User details  </h2>
+            </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="first_name" class="form-label-lg">First Name</label>
+                  <input name="first_name" type="text" class="form-control form-control-lg" id="first_name" placeholder="Your first name" required>
+                  <div class="invalid-feedback">First Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="last_name" class="form-label-lg">Last Name</label>
+                  <input name="last_name" type="text" class="form-control form-control-lg" id="last_name" placeholder="Your last name" required>
+                  <div class="invalid-feedback">Last Name.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="email_id_pay" class="form-label-lg">Email</label>
+                  <input name="email_id_pay" type="email" class="form-control form-control-lg" id="email_id_pay" placeholder="Your email address" required>
+                  <div class="invalid-feedback">Please fill a valid email.</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="phone" class="form-label-lg">Phone</label>
+                  <input name="phone" type="text" class="form-control form-control-lg" id="phone" placeholder="Your phone number" required>
+                  <div class="invalid-feedback">Please fill a valid phone number.</div>
+                </div>
+                <input type="hidden" name="amount" id="amount" value="45000" >
+                <input type="hidden" name="purpose" id="purpose" value="E-Commerce Mobile Application" >
+                </div>
+              </div>
+              <aside class="col-lg-4">
+                <div class="position-sticky top-0">
+                 
+
+              <div class="row">
+
+        
+                <div class="bg-secondary rounded mb-3">
+                  <div class="border-bottom">
+                    <h2 class="h4 mb-0">Order totals</h2>
+                  </div>
+                  <ul class="list-unstyled border-bottom mb-0 p-4">
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="fw-bold">Development Charges:</span>
+                      <span class="fw-bold">₹50000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Hosting costs:</span>
+                      <span>*NOT Included</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-2">
+                      <span>Discount:</span>
+                      <span>₹5000.00</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <span>Estimated sales tax:</span>
+                      <span>&mdash;</span>
+                    </li>
+                  </ul>
+                  <div class="d-flex justify-content-between mt-3">
+                    <span class="h5 mb-0">Order total:</span>
+                    <span class="h5 mb-0">₹45000.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="ex-check-2" checked required>
+  <label class="form-check-label" for="ex-check-2">By proceeding you agree to our <a href="/termsandconditions/">Terms & Conditions </a> and  <a href="/privacypolicy/">Privacy Policy</a></label>
+</div>
+        
+              <button type="submit" class="btn btn-primary btn-lg d-block w-100">Complete order</button>
+            </div>
+            </aside>
+</form>            
+            </div>
+
+
+
+          </div>          
+        <!-- E_Commerce_Mobile_App End -->
+
+          <!-- Custom_Mobile_App details -->
+          <div class="tab-pane fade pt-3" id="Custom_Mobile_Application" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-7 col-md-12 mb-md-0 mb-4 offset-lg-1">
+                <h3 class="h5 mb-3">Custom Native Mobile Application </h3>
+                <p><a href="/contacts">Contact Us</a> for your Custom Mobile Application </p>
+                <hr class="my-4">
+                <h3 class="h5 mb-3">Customer Care</h3>
+                <ul class="ps-0">
+                  <li class="d-flex align-items-start">
+                    <i class="ci-phone"></i>
+                    <div class="ps-1">
+                      +91 9571670706
+                    </div>
+                  </li>
+                  <li class="d-flex align-items-start">
+                    <i class="ci-whatsapp"></i>
+                    <div class="ps-1">
+                      +91 9106312511
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+
+            </div>
+
+          </div>          
+        <!-- E_Commerce_Mobile_App End -->
+
+          <!-- Custom_Web_App details -->
+          <div class="tab-pane fade pt-3" id="Custom_Web_App" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-7 col-md-12 mb-md-0 mb-4 offset-lg-1">
+                <h3 class="h5 mb-3">Custom Web Application </h3>
+                <p> <a href="/contacts">Contact Us</a> for Custom Web application </p>
+                <hr class="my-4">
+                <h3 class="h5 mb-3">Customer Care</h3>
+                <ul class="ps-0">
+                  <li class="d-flex align-items-start">
+                    <i class="ci-phone"></i>
+                    <div class="ps-1">
+                      +91 9571670706
+                    </div>
+                  </li>
+                  <li class="d-flex align-items-start">
+                    <i class="ci-whatsapp"></i>
+                    <div class="ps-1">
+                      +91 9106312511
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+
+            </div>
+
+          </div>          
+        <!-- Custom_Web_App End -->
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+      {% endblock content %}
+      {% block footernscripts  %}
+      {% include "base_templates/footer.html" %}
+  
+  
+      <!-- Offcanvas mobile toggle btn -->
+      <button class="btn btn-primary btn-sm sidebar-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#blog-sidebar" data-fixed-element>
+        <i class="ci-sidebar-right fs-base me-1 align-middle"></i>
+        Sidebar
+      </button>
+  
+  
+      <!-- Vendor scripts: js libraries and plugins-->
+      <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'vendor/simplebar/dist/simplebar.min.js' %}"></script>
+      <script src="{% static 'vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js' %}"></script>
+      <script src="{% static 'vendor/jarallax/dist/jarallax.min.js' %}"></script>
+  
+  
+      <!-- Main theme script-->
+      <script src="{% static 'main/js/theme.min.js' %}"></script>
+      <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script>
+$(document).ready(function(){
+  // Check if there's a hash value in the URL
+  if(window.location.hash) {
+    // Get the hash value
+    var hash = window.location.hash.substring(1);
+    
+    // Activate the corresponding tab
+    $('.nav-link[href="#' + hash + '"]').tab('show');
+  }
+
+  // Update the URL hash value when a tab is clicked
+  $('.nav-link').on('shown.bs.tab', function (e) {
+    window.location.hash = e.target.hash;
+  });
+});
+      </script>
+  {% endblock footernscripts  %}
